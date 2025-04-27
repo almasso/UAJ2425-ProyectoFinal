@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\src\Damn\CameraMovement.cpp" />
+    <ClCompile Include="..\..\src\Damn\DamnMain.cpp" />
+    <ClCompile Include="..\..\src\Damn\Health.cpp" />
+    <ClCompile Include="..\..\src\Damn\MovementController.cpp" />
+    <ClCompile Include="..\..\src\Damn\InputController.cpp" />
+    <ClCompile Include="..\..\src\Damn\EnemyAttack.cpp" />
+    <ClCompile Include="..\..\src\Damn\PlayerHealth.cpp" />
+    <ClCompile Include="..\..\src\Damn\ProjectileMovement.cpp" />
+    <ClCompile Include="..\..\src\Damn\WeaponComponent.cpp" />
+    <ClCompile Include="..\..\src\Damn\WeaponManager.cpp" />
+    <ClCompile Include="..\..\src\Damn\Shotgun.cpp" />
+    <ClCompile Include="..\..\src\Damn\EnemyHealth.cpp" />
+    <ClCompile Include="..\..\src\Damn\AmmoBoxComponent.cpp" />
+    <ClCompile Include="..\..\src\Damn\UIManager.cpp" />
+    <ClCompile Include="..\..\src\Damn\GameManager.cpp" />
+    <ClCompile Include="..\..\src\Damn\ChangeCameraBackground.cpp" />
+    <ClCompile Include="..\..\src\Damn\MainMenuCameraRotation.cpp" />
+    <ClCompile Include="..\..\src\Damn\ButtonFunctions.cpp" />
+    <ClCompile Include="..\..\src\Damn\Spawnpoint.cpp" />
+    <ClCompile Include="..\..\src\Damn\Rifle.cpp" />
+    <ClCompile Include="..\..\src\Damn\BulletDamage.cpp" />
+    <ClCompile Include="..\..\src\Damn\BulletEnemyDamage.cpp" />
+    <ClCompile Include="..\..\src\Damn\BulletPlayerDamage.cpp" />
+    <ClCompile Include="..\..\src\Damn\MenuBullets.cpp" />
+    <ClCompile Include="..\..\src\Damn\SoundController.cpp" />
+    <ClCompile Include="..\..\src\Damn\RomeComponent.cpp" />
+    <ClCompile Include="..\..\src\Damn\LevelStartEvent.cpp">
+      <Filter>Eventos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Damn\LevelEndEvent.cpp">
+      <Filter>Eventos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Damn\ShotEvent.cpp">
+      <Filter>Eventos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Damn\ShotCollisionEvent.cpp">
+      <Filter>Eventos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Damn\ProgressionTracker.cpp" />
+    <ClCompile Include="..\..\src\Damn\GameEventTracker.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\Damn\CameraMovement.h" />
+    <ClInclude Include="..\..\src\Damn\DamnMain.h" />
+    <ClInclude Include="..\..\src\Damn\Health.h" />
+    <ClInclude Include="..\..\src\Damn\InputController.h" />
+    <ClInclude Include="..\..\src\Damn\MovementController.h" />
+    <ClInclude Include="..\..\src\Damn\EnemyAttack.h" />
+    <ClInclude Include="..\..\src\Damn\PlayerHealth.h" />
+    <ClInclude Include="..\..\src\Damn\ProjectileMovement.h" />
+    <ClInclude Include="..\..\src\Damn\WeaponComponent.h" />
+    <ClInclude Include="..\..\src\Damn\WeaponManager.h" />
+    <ClInclude Include="..\..\src\Damn\Shotgun.h" />
+    <ClInclude Include="..\..\src\Damn\EnemyHealth.h" />
+    <ClInclude Include="..\..\src\Damn\AmmoBoxComponent.h" />
+    <ClInclude Include="..\..\src\Damn\UIManager.h" />
+    <ClInclude Include="..\..\src\Damn\GameManager.h" />
+    <ClInclude Include="..\..\src\Damn\ChangeCameraBackground.h" />
+    <ClInclude Include="..\..\src\Damn\MainMenuCameraRotation.h" />
+    <ClInclude Include="..\..\src\Damn\ButtonFunctions.h" />
+    <ClInclude Include="..\..\src\Damn\Spawnpoint.h" />
+    <ClInclude Include="..\..\src\Damn\Rifle.h" />
+    <ClInclude Include="..\..\src\Damn\BulletDamage.h" />
+    <ClInclude Include="..\..\src\Damn\BulletEnemyDamage.h" />
+    <ClInclude Include="..\..\src\Damn\BulletPlayerDamage.h" />
+    <ClInclude Include="..\..\src\Damn\MenuBullets.h" />
+    <ClInclude Include="..\..\src\Damn\SoundController.h" />
+    <ClInclude Include="..\..\src\Damn\RomeComponent.h" />
+    <ClInclude Include="..\..\src\Damn\LevelStartEvent.h">
+      <Filter>Eventos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Damn\LevelEndEvent.h">
+      <Filter>Eventos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Damn\ShotEvent.h">
+      <Filter>Eventos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Damn\ShotCollisionEvent.h">
+      <Filter>Eventos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Damn\ProgressionTracker.h" />
+    <ClInclude Include="..\..\src\Damn\GameEventTracker.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Eventos">
+      <UniqueIdentifier>{5d5d5e7f-e17c-455d-adf7-4484ef5cccfb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
