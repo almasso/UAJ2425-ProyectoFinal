@@ -1,0 +1,58 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Visual Studio files
+
+*.pdb
+*.idb
+
+# User files
+*.user
+*.log
+
+# Archivos de Mac
+**/.DS_Store
+
+# Archivos de la compilacion de las librerias de EDEN
+*.EDENBUILD
+
+# Folders
+
+[Bb]in/*
+[Tt]emp/
+[Ll]ib/
+.vs/
+
+# Exceptions
+
+![Bb]in/[Aa]ssets/

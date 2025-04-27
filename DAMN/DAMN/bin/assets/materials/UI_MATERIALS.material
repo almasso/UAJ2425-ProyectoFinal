@@ -1,0 +1,820 @@
+material Cursor.png {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+            	texture_unit {
+                texture Cursor.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material PlayButton_Ini.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture PlayButton_Ini.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material newgame_white.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture newgame_white.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material newgame_red.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture newgame_red.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material newgame_darkred.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture newgame_darkred.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material options_white.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture options_white.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material options_red.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture options_red.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material options_darkred.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture options_darkred.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material quitgame_white.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture quitgame_white.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material quitgame_red.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture quitgame_red.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material quitgame_darkred.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture quitgame_darkred.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material atras_white.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture atras_white.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material atras_red.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture atras_red.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material atras_darkred.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture atras_darkred.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material avance_white.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture avance_white.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material avance_red.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture avance_red.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material avance_darkred.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture avance_darkred.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material fullscreenoff_red.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture fullscreenoff_red.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material fullscreenoff_darkred.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture fullscreenoff_darkred.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material fullscreenon_green.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture fullscreenon_green.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material fullscreenon_darkgreen.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture fullscreenon_darkgreen.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material cubestudios.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture cubestudios.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material screensize.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture screensize.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material soundvolume.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture soundvolume.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material volumebar.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture volumebar.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material volumebarbackground.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+					texture volumebarbackground.png
+					tex_address_mode clamp
+                
+				}
+        }
+    }
+}
+
+material blurtransparentbg.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture blurtransparentbg.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material pausemenubg.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture pausemenubg.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material pause_white.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture pause_white.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material loseHealth100.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture loseHealth100.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material loseHealth75.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture loseHealth75.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material loseHealth50.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture loseHealth50.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material loseHealth25.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture loseHealth25.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material loseText.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture loseText.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material winText.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture winText.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material winMenuBackground.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture winMenuBackground.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material finalScoreText.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture finalScoreText.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material vignette.png {
+	receive_shadows on
+	technique {
+		pass {
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			diffuse vertexcolour
+			texture_unit {
+                texture vignette.png
+                tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material mainmenu_white.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture mainmenu_white.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material mainmenu_red.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture mainmenu_red.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material mainmenu_darkred.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture mainmenu_darkred.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material damnlogo.png {
+     receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture damnlogo.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material Pistol.png {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture Pistol.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material Shotgun.png {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture Shotgun.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material BackBar.png {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture BackBar.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material FrontBar.png {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture FrontBar.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material HealthBar.png {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture HealthBar.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material Helmet.png {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture Helmet.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}
+
+material Sniper.png {
+    receive_shadows on
+    technique {
+        pass {
+                lighting off
+                scene_blend alpha_blend
+                depth_write off
+                diffuse vertexcolour
+                texture_unit {
+                texture Sniper.png
+                tex_address_mode clamp
+                
+            }
+        }
+    }
+}

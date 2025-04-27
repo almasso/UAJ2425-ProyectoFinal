@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{b3a4856e-9d16-4fa7-b2a4-00b2e1f21b76}</ProjectGuid>
+    <RootNamespace>Damn</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\</OutDir>
+    <IntDir>$(SolutionDir)temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>game_d</TargetName>
+    <PublicIncludeDirectories>$(SolutionDir)EDEN\src\EDEN_Export\;$(SolutionDir)EDEN\src\EDEN_Script\;$(SolutionDir)EDEN\src\EDEN_Render\;$(SolutionDir)EDEN\src\EDEN_Physics\;$(SolutionDir)EDEN\src\EDEN_Input\;$(SolutionDir)EDEN\src\EDEN_Audio\;$(SolutionDir)EDEN\src\EDEN_EC\;$(SolutionDir)EDEN\src\EDEN_Utils\;$(SolutionDir)EDEN\src\EDEN_Managers\;%(AdditionalIncludeDirectories)</PublicIncludeDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\</OutDir>
+    <IntDir>$(SolutionDir)temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>game</TargetName>
+    <PublicIncludeDirectories>$(SolutionDir)EDEN\src\EDEN_Export\;$(SolutionDir)EDEN\src\EDEN_Script\;$(SolutionDir)EDEN\src\EDEN_Render\;$(SolutionDir)EDEN\src\EDEN_Physics\;$(SolutionDir)EDEN\src\EDEN_Input\;$(SolutionDir)EDEN\src\EDEN_Audio\;$(SolutionDir)EDEN\src\EDEN_EC\;$(SolutionDir)EDEN\src\EDEN_Utils\;$(SolutionDir)EDEN\src\EDEN_Managers\;%(AdditionalIncludeDirectories)</PublicIncludeDirectories>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>EDEN_EXPORTS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Telemetry-System\TelemetrySystem\Src\;$(SolutionDir)Telemetry-System\TelemetrySystem\Dependencies\json\include\;$(SolutionDir)EDEN\src\EDEN_Export\;$(SolutionDir)EDEN\src\EDEN_Script\;$(SolutionDir)EDEN\src\EDEN_Render\;$(SolutionDir)EDEN\src\EDEN_Physics\;$(SolutionDir)EDEN\src\EDEN_Input\;$(SolutionDir)EDEN\src\EDEN_Audio\;$(SolutionDir)EDEN\src\EDEN_EC\;$(SolutionDir)EDEN\src\EDEN_Utils\;$(SolutionDir)EDEN\src\EDEN_Managers\;$(SolutionDir)EDEN\dependencies\Lua\src\src\;$(SolutionDir)EDEN\dependencies\LuaBridge\Source\LuaBridge\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Telemetry-System\TelemetrySystem\Bin\;$(SolutionDir)bin\;$(SolutionDir)EDEN\dependencies\Lua\build\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>TelemetrySystem_d.lib;EDEN_Export_d.lib;%(AdditionalDependencies);lua.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>EDEN_EXPORTS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Telemetry-System\TelemetrySystem\Src\;$(SolutionDir)Telemetry-System\TelemetrySystem\Dependencies\json\include\;$(SolutionDir)EDEN\src\EDEN_Export\;$(SolutionDir)EDEN\src\EDEN_Script\;$(SolutionDir)EDEN\src\EDEN_Render\;$(SolutionDir)EDEN\src\EDEN_Physics\;$(SolutionDir)EDEN\src\EDEN_Input\;$(SolutionDir)EDEN\src\EDEN_Audio\;$(SolutionDir)EDEN\src\EDEN_EC\;$(SolutionDir)EDEN\src\EDEN_Utils\;$(SolutionDir)EDEN\src\EDEN_Managers\;$(SolutionDir)EDEN\dependencies\Lua\src\src\;$(SolutionDir)EDEN\dependencies\LuaBridge\Source\LuaBridge\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Telemetry-System\TelemetrySystem\Bin\;$(SolutionDir)bin\;$(SolutionDir)EDEN\dependencies\Lua\build\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>TelemetrySystem.lib;EDEN_Export.lib;%(AdditionalDependencies);lua.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\Damn\ButtonFunctions.h" />
+    <ClInclude Include="..\..\src\Damn\AmmoBoxComponent.h" />
+    <ClInclude Include="..\..\src\Damn\CameraMovement.h" />
+    <ClInclude Include="..\..\src\Damn\BulletDamage.h" />
+    <ClInclude Include="..\..\src\Damn\BulletEnemyDamage.h" />
+    <ClInclude Include="..\..\src\Damn\BulletPlayerDamage.h" />
+    <ClInclude Include="..\..\src\Damn\ChangeCameraBackground.h" />
+    <ClInclude Include="..\..\src\Damn\GameEventTracker.h" />
+    <ClInclude Include="..\..\src\Damn\LevelEndEvent.h" />
+    <ClInclude Include="..\..\src\Damn\LevelStartEvent.h" />
+    <ClInclude Include="..\..\src\Damn\MainMenuCameraRotation.h" />
+    <ClInclude Include="..\..\src\Damn\MenuBullets.h" />
+    <ClInclude Include="..\..\src\Damn\ProgressionTracker.h" />
+    <ClInclude Include="..\..\src\Damn\ProjectileMovement.h" />
+    <ClInclude Include="..\..\src\Damn\DamnMain.h" />
+    <ClInclude Include="..\..\src\Damn\EnemyHealth.h" />
+    <ClInclude Include="..\..\src\Damn\GameManager.h" />
+    <ClInclude Include="..\..\src\Damn\Health.h" />
+    <ClInclude Include="..\..\src\Damn\InputController.h" />
+    <ClInclude Include="..\..\src\Damn\MovementController.h" />
+    <ClInclude Include="..\..\src\Damn\EnemyAttack.h" />
+    <ClInclude Include="..\..\src\Damn\PlayerHealth.h" />
+    <ClInclude Include="..\..\src\Damn\Rifle.h" />
+    <ClInclude Include="..\..\src\Damn\RomeComponent.h" />
+    <ClInclude Include="..\..\src\Damn\ShotCollisionEvent.h" />
+    <ClInclude Include="..\..\src\Damn\ShotEvent.h" />
+    <ClInclude Include="..\..\src\Damn\Shotgun.h" />
+    <ClInclude Include="..\..\src\Damn\SoundController.h" />
+    <ClInclude Include="..\..\src\Damn\Spawnpoint.h" />
+    <ClInclude Include="..\..\src\Damn\UIManager.h" />
+    <ClInclude Include="..\..\src\Damn\WeaponComponent.h" />
+    <ClInclude Include="..\..\src\Damn\WeaponManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\Damn\ButtonFunctions.cpp" />
+    <ClCompile Include="..\..\src\Damn\AmmoBoxComponent.cpp" />
+    <ClCompile Include="..\..\src\Damn\CameraMovement.cpp" />
+    <ClCompile Include="..\..\src\Damn\BulletDamage.cpp" />
+    <ClCompile Include="..\..\src\Damn\BulletEnemyDamage.cpp" />
+    <ClCompile Include="..\..\src\Damn\BulletPlayerDamage.cpp" />
+    <ClCompile Include="..\..\src\Damn\ChangeCameraBackground.cpp" />
+    <ClCompile Include="..\..\src\Damn\GameEventTracker.cpp" />
+    <ClCompile Include="..\..\src\Damn\LevelEndEvent.cpp" />
+    <ClCompile Include="..\..\src\Damn\LevelStartEvent.cpp" />
+    <ClCompile Include="..\..\src\Damn\MainMenuCameraRotation.cpp" />
+    <ClCompile Include="..\..\src\Damn\MenuBullets.cpp" />
+    <ClCompile Include="..\..\src\Damn\ProgressionTracker.cpp" />
+    <ClCompile Include="..\..\src\Damn\ProjectileMovement.cpp" />
+    <ClCompile Include="..\..\src\Damn\DamnMain.cpp" />
+    <ClCompile Include="..\..\src\Damn\EnemyHealth.cpp" />
+    <ClCompile Include="..\..\src\Damn\GameManager.cpp" />
+    <ClCompile Include="..\..\src\Damn\Health.cpp" />
+    <ClCompile Include="..\..\src\Damn\MovementController.cpp" />
+    <ClCompile Include="..\..\src\Damn\InputController.cpp" />
+    <ClCompile Include="..\..\src\Damn\EnemyAttack.cpp" />
+    <ClCompile Include="..\..\src\Damn\PlayerHealth.cpp" />
+    <ClCompile Include="..\..\src\Damn\Rifle.cpp" />
+    <ClCompile Include="..\..\src\Damn\RomeComponent.cpp" />
+    <ClCompile Include="..\..\src\Damn\ShotCollisionEvent.cpp" />
+    <ClCompile Include="..\..\src\Damn\ShotEvent.cpp" />
+    <ClCompile Include="..\..\src\Damn\Shotgun.cpp" />
+    <ClCompile Include="..\..\src\Damn\SoundController.cpp" />
+    <ClCompile Include="..\..\src\Damn\Spawnpoint.cpp" />
+    <ClCompile Include="..\..\src\Damn\UIManager.cpp" />
+    <ClCompile Include="..\..\src\Damn\WeaponComponent.cpp" />
+    <ClCompile Include="..\..\src\Damn\WeaponManager.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
