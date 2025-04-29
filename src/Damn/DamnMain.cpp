@@ -30,6 +30,7 @@
 #include "Tracker.h"
 #include "FilePersistence.h"
 #include "ISerializer.h"
+#include "BootMovement.h"
 
 #include <chrono>      
 #include <string>   
@@ -61,6 +62,7 @@ void RegisterComponents() {
 	factory->RegisterComponent<damn::BulletEnemyDamage>();
 	factory->RegisterComponent<damn::BulletPlayerDamage>();
 	factory->RegisterComponent<damn::RomeComponent>();
+	factory->RegisterComponent<damn::BootMovement>();
 }
 
 void LoadScene() {

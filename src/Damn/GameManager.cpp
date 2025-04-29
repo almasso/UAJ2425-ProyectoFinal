@@ -13,7 +13,6 @@
 #include <Transform.h>
 #include <ErrorHandler.h>
 #include "BulletPlayerDamage.h"
-#include "Tracker.h"
 #include "Serializers/JSONSerializer.h"
 #include "FilePersistence.h"
 #include "Tracker.h"
@@ -181,7 +180,6 @@ void damn::GameManager::setPlayer(eden_ec::Entity* p)
 	if (_savedPlayerCurrentHealth > 0)
 		_player->GetComponent<PlayerHealth>()->SetCurrentHealth(_savedPlayerCurrentHealth);
 	UnlockGuns(false);
-	//_weaponManager->ChangeWeapon();
 }
 
 void damn::GameManager::setUIManager(UIManager* ui)

@@ -41,6 +41,12 @@
     </ClCompile>
     <ClCompile Include="..\..\src\Damn\ProgressionTracker.cpp" />
     <ClCompile Include="..\..\src\Damn\GameEventTracker.cpp" />
+    <ClCompile Include="..\..\src\Damn\PositionEvent.cpp">
+      <Filter>ProyectoFinal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Damn\BootMovement.cpp">
+      <Filter>ProyectoFinal</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Damn\CameraMovement.h" />
@@ -83,10 +89,19 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Damn\ProgressionTracker.h" />
     <ClInclude Include="..\..\src\Damn\GameEventTracker.h" />
+    <ClInclude Include="..\..\src\Damn\PositionEvent.h">
+      <Filter>ProyectoFinal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Damn\BootMovement.h">
+      <Filter>ProyectoFinal</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Eventos">
       <UniqueIdentifier>{5d5d5e7f-e17c-455d-adf7-4484ef5cccfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProyectoFinal">
+      <UniqueIdentifier>{9ea105ff-fe43-4ae0-8874-7a66e0f65cbc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -95,6 +95,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\Damn\BootMovement.h" />
     <ClInclude Include="..\..\src\Damn\ButtonFunctions.h" />
     <ClInclude Include="..\..\src\Damn\AmmoBoxComponent.h" />
     <ClInclude Include="..\..\src\Damn\CameraMovement.h" />
@@ -107,6 +108,7 @@
     <ClInclude Include="..\..\src\Damn\LevelStartEvent.h" />
     <ClInclude Include="..\..\src\Damn\MainMenuCameraRotation.h" />
     <ClInclude Include="..\..\src\Damn\MenuBullets.h" />
+    <ClInclude Include="..\..\src\Damn\PositionEvent.h" />
     <ClInclude Include="..\..\src\Damn\ProgressionTracker.h" />
     <ClInclude Include="..\..\src\Damn\ProjectileMovement.h" />
     <ClInclude Include="..\..\src\Damn\DamnMain.h" />
@@ -129,6 +131,7 @@
     <ClInclude Include="..\..\src\Damn\WeaponManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\Damn\BootMovement.cpp" />
     <ClCompile Include="..\..\src\Damn\ButtonFunctions.cpp" />
     <ClCompile Include="..\..\src\Damn\AmmoBoxComponent.cpp" />
     <ClCompile Include="..\..\src\Damn\CameraMovement.cpp" />
@@ -141,6 +144,7 @@
     <ClCompile Include="..\..\src\Damn\LevelStartEvent.cpp" />
     <ClCompile Include="..\..\src\Damn\MainMenuCameraRotation.cpp" />
     <ClCompile Include="..\..\src\Damn\MenuBullets.cpp" />
+    <ClCompile Include="..\..\src\Damn\PositionEvent.cpp" />
     <ClCompile Include="..\..\src\Damn\ProgressionTracker.cpp" />
     <ClCompile Include="..\..\src\Damn\ProjectileMovement.cpp" />
     <ClCompile Include="..\..\src\Damn\DamnMain.cpp" />
