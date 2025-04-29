@@ -650,5 +650,51 @@ Cursor = {
 	}		
 }
 
+Boot = {
+    Name = "Boot",
+    Components = {
+        {
+            Name = "TRANSFORM",
+            Arguments = {
+                Position = "0|0|100",
+                Rotation = "false|1.0|0.0|0.0|0.0",
+                Scale = "1|1|1"
+            }
+        },
+		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "1.0",
+				Bounciness = "0.0",
+				Friction = "1.0",
+				AABB = "1|3.5|1",
+				PosOffset = "0|0|0",
+				Radius = "0.0",
+				Shape = "BOX",
+				CollisionFlag = "DYNAMIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
+			}
+		},
+		{
+			Name = "CAMERA",
+			Arguments = {
+			}
+		},
+		{
+			Name = "CAMERA_MOVEMENT",
+			Arguments = { 
+				Sensivity = "0.1"
+			}
+		},
+		{
+			Name = "BOOT_MOVEMENT",
+			Arguments = {
+				Speed = "10";
+			}
+		}
+    }
+}
+
 Blueprints = { Cube, Bullet, ShotgunShell, EnemyBullet, Player, Wall, Floor, Enemy, EnemyHarder, Ammo, MenuBullet, 
-ScoreText, VignetteEffect, WinText, FinalScoreText, MainMenuButton, Cursor, healthEffect, LoseText }
+ScoreText, VignetteEffect, WinText, FinalScoreText, MainMenuButton, Cursor, healthEffect, LoseText,Boot }

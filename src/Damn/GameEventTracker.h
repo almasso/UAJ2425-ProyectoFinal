@@ -10,5 +10,5 @@ public:
 	bool accept(TrackerEvent* trackerEvent) override;
 	bool process(Persistence* persistence, TrackerEvent* trackerEvent) override;
 private:
-	std::unordered_set<std::string> _gameEvents = { "Shot", "ShotCollision" };
+	std::unordered_set<std::string> _gameEvents = { "Shot", "ShotCollision","Position" };
 };
