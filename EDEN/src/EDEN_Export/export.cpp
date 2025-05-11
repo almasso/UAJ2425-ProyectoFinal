@@ -57,7 +57,9 @@
 #include "CAnimator.h"
 
 #include "RenderManager.h"
-
+#include "CommandManager.h"
+#include "EDENCommands.h"
+#include "SceneManager.h"
 #include <string>
 #include "Export.h"
 
@@ -80,6 +82,12 @@ void RegisterEngineComponents() {
 	eden_ec::ComponentFactory::Instance()->RegisterComponent<eden_ec::CAudioEmitter>();
 	eden_ec::ComponentFactory::Instance()->RegisterComponent<eden_ec::CAudioListener>();
 	eden_ec::ComponentFactory::Instance()->RegisterComponent<eden_ec::CEDENScene>();
+}
+
+void RegisterCommandEngineFunctions() {
+	eden_command::CommandManager::getInstance()->RegisterFunction("InstantiateBlueprint", eden_command::EDENCommands::InstantiateBlueprint);
+	eden_command::CommandManager::getInstance()->RegisterFunction("ChangeScene", eden_command::EDENCommands::ChangeScene);
+
 }
 
 void eden_export::RunEDEN()
@@ -110,6 +118,7 @@ void eden_export::RunEDEN()
 		else {
 			typedef void (*CompFunc)();
 			CompFunc RegisterGameComponents = reinterpret_cast<CompFunc>(GetProcAddress(game, "RegisterComponents"));
+			CompFunc RegisterGameCommands = reinterpret_cast<CompFunc>(GetProcAddress(game, "RegisterCommands"));
 
 			LoadScene = reinterpret_cast<SceneFunc>(GetProcAddress(game, "LoadScene"));
 
@@ -127,9 +136,14 @@ void eden_export::RunEDEN()
 				// Registro de componentes
 				RegisterEngineComponents();
 				eden_ec::ComponentFactory* factory = eden_ec::ComponentFactory::Instance();
+				
 				RegisterGameComponents();
 
 				master = eden::Master::Instance(); // creaci�n instancia master
+				
+				RegisterCommandEngineFunctions();
+				if(RegisterGameCommands != NULL) RegisterGameCommands();
+				
 				scnManager = eden::SceneManager::Instance(); // creaci�n instancia de gestor de escenas
 				eden_input::InputManager::Instance();
 				//LoadScene(); // carga de escena del juego

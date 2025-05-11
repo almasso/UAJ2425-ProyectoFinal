@@ -15,6 +15,7 @@ namespace eden_input {
 }
 
 extern "C" __declspec(dllexport) void RegisterComponents();
+extern "C" __declspec(dllexport) void RegisterCommands();
 extern "C" __declspec(dllexport) void LoadScene();
 extern "C" __declspec(dllexport) void EndGame();
 

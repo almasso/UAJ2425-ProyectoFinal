@@ -31,6 +31,7 @@
 #include "FilePersistence.h"
 #include "ISerializer.h"
 #include "BootMovement.h"
+#include "CommandManager.h"
 
 #include <chrono>      
 #include <string>   
@@ -63,6 +64,11 @@ void RegisterComponents() {
 	factory->RegisterComponent<damn::BulletPlayerDamage>();
 	factory->RegisterComponent<damn::RomeComponent>();
 	factory->RegisterComponent<damn::BootMovement>();
+}
+
+void RegisterCommands() {
+	eden_command::CommandManager* instance = eden_command::CommandManager::getInstance();
+	//instance->RegisterFunction();
 }
 
 void LoadScene() {

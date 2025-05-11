@@ -19,6 +19,7 @@
 #include "AudioManager.h"
 #include "ScriptManager.h"
 #include "ResourcesManager.h"
+#include "CommandManager.h"
 
 bool eden::Master::_initialized = false;
 
@@ -50,6 +51,7 @@ eden::Master::Master()
 	_scnManager = SceneManager::Instance();
 	_physicsManager = physics_manager::PhysicsManager::Instance();
 	_audioManager = eden_audio::AudioManager::Instance();
+	_commandManager = eden_command::CommandManager::Instance();
 
 	_initialized = true;
 }
@@ -61,6 +63,7 @@ void eden::Master::CloseApplication() {
 
 eden::Master::~Master()
 {
+	_commandManager->Close();
 	_scnManager->Close();
 	_physicsManager->Close();
 	_inputManager->Close();
