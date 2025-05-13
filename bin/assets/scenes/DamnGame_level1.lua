@@ -131,7 +131,7 @@ Entity4 = {
 				Radius = "37.5893440246582",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -1059,7 +1059,7 @@ Entity33 = {
 				Radius = "37.5893440246582",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -1199,7 +1199,7 @@ Entity37 = {
 				Radius = "37.5893440246582",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -2435,7 +2435,7 @@ Entity76 = {
 }
 
 Entity77 = {
-	Name = "Boot",
+	Name = "MovementBot",
 	Components = {
 		{
 			Name = "TRANSFORM",
@@ -2458,6 +2458,7 @@ Entity73, Entity74, Entity75, Entity76 }
 
 CollisionLayers = {
 	Layers = {
-		DEFAULT = ""
+		DEFAULT = "",
+		FLOOR = ""
 	}
 }

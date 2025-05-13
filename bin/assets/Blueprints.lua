@@ -355,7 +355,7 @@ Floor = {
 				Radius = "10.0",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT"
+				CollisionLayer = "FLOOR"
 			}
 		}
 	}
@@ -650,8 +650,8 @@ Cursor = {
 	}		
 }
 
-Boot = {
-    Name = "Boot",
+MovementBot = {
+    Name = "MovementBot",
     Components = {
         {
             Name = "TRANSFORM",
@@ -688,13 +688,73 @@ Boot = {
 			}
 		},
 		{
-			Name = "BOOT_MOVEMENT",
+			Name = "BOT_MOVEMENT",
 			Arguments = {
-				Speed = "10";
+				Speed = "10",
+				SendEventTime = "1",
+				ChangeDirectionTime = "0.5"
 			}
 		}
     }
 }
 
+CollisionBot = {
+    Name = "CollisionBot",
+    Components = {
+        {
+            Name = "TRANSFORM",
+            Arguments = {
+                Position = "0|0|100",
+                Rotation = "false|1.0|0.0|0.0|0.0",
+                Scale = "1|1|1"
+            }
+        },
+		{
+			Name = "RIGIDBODY",
+			Arguments = {
+				Mass = "1.0",
+				Bounciness = "0.0",
+				Friction = "1.0",
+				AABB = "1|3.5|1",
+				PosOffset = "0|0|0",
+				Radius = "0.0",
+				Shape = "BOX",
+				CollisionFlag = "DYNAMIC",
+				CollisionLayer = "DEFAULT",
+				Trigger = "false"
+			}
+		},
+		{
+			Name = "CAMERA",
+			Arguments = {
+			}
+		},
+		{
+			Name = "CAMERA_MOVEMENT",
+			Arguments = { 
+				Sensivity = "0.1"
+			}
+		},
+		{
+			Name = "BOT_COLLISION",
+			Arguments = {
+				Speed = "10",
+				SendEventTime = "1",
+				AnglesToRotate = "30"
+			}
+		},
+		{
+			Name = "BEHAVIOUR",
+			Arguments = {
+				Script = "botCollision"
+			}
+		},
+		{
+			Name = "BOT_COLLIDES",
+			Arguments = {}
+		}
+    }
+}
+
 Blueprints = { Cube, Bullet, ShotgunShell, EnemyBullet, Player, Wall, Floor, Enemy, EnemyHarder, Ammo, MenuBullet, 
-ScoreText, VignetteEffect, WinText, FinalScoreText, MainMenuButton, Cursor, healthEffect, LoseText,Boot }
+ScoreText, VignetteEffect, WinText, FinalScoreText, MainMenuButton, Cursor, healthEffect, LoseText,MovementBot, CollisionBot }
