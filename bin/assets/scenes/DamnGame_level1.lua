@@ -2435,7 +2435,7 @@ Entity76 = {
 }
 
 Entity77 = {
-	Name = "MovementBot",
+	Name = "CollisionBot",
 	Components = {
 		{
 			Name = "TRANSFORM",

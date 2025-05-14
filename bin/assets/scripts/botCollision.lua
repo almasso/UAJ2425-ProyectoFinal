@@ -15,10 +15,10 @@ function botCollision:OnCollisionEnter()
 	BotCollision:HasBotCollided();
 end
 function botCollision:OnCollisionStay()
-	BotCollision:HasBotCollided();
+	--BotCollision:HasBotCollided();
 end
 function botCollision:OnCollisionExit()
-
+	BotCollision:CollisionExit();
 end
 --Variable global de la clase (para Luabridge)
 botCollisionLua = botCollision:new()

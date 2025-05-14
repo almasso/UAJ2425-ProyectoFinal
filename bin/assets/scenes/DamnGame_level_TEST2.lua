@@ -26,7 +26,7 @@ Entity1 = {
 				Radius = "13.346583366394043",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -61,7 +61,7 @@ Entity2 = {
 				Radius = "7.111151218414307",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -96,7 +96,7 @@ Entity3 = {
 				Radius = "7.111151218414307",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -131,7 +131,7 @@ Entity4 = {
 				Radius = "7.111151218414307",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -166,7 +166,7 @@ Entity5 = {
 				Radius = "7.111151218414307",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -201,7 +201,7 @@ Entity6 = {
 				Radius = "11.792545318603516",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -236,7 +236,7 @@ Entity7 = {
 				Radius = "13.346583366394043",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -271,7 +271,7 @@ Entity8 = {
 				Radius = "12.016144752502441",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -306,7 +306,7 @@ Entity9 = {
 				Radius = "11.792545318603516",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -341,7 +341,7 @@ Entity10 = {
 				Radius = "7.111151218414307",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -376,7 +376,7 @@ Entity11 = {
 				Radius = "7.111151218414307",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -411,7 +411,7 @@ Entity12 = {
 				Radius = "7.111151218414307",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -446,7 +446,7 @@ Entity13 = {
 				Radius = "7.111151218414307",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -481,7 +481,7 @@ Entity14 = {
 				Radius = "30.589345932006836",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -516,7 +516,7 @@ Entity15 = {
 				Radius = "16.52264976501465",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -551,7 +551,7 @@ Entity16 = {
 				Radius = "9.412431716918945",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -586,7 +586,7 @@ Entity17 = {
 				Radius = "7.111151218414307",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -621,7 +621,7 @@ Entity18 = {
 				Radius = "7.111151218414307",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -656,7 +656,7 @@ Entity19 = {
 				Radius = "7.111151218414307",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -691,7 +691,7 @@ Entity20 = {
 				Radius = "7.111151218414307",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -726,7 +726,7 @@ Entity21 = {
 				Radius = "11.792545318603516",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -831,7 +831,7 @@ Entity24 = {
 				Radius = "13.346583366394043",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -1705,7 +1705,7 @@ Entity51 = {
 				Radius = "37.5893440246582",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -1810,7 +1810,7 @@ Entity54 = {
 				Radius = "37.5893440246582",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -2954,7 +2954,7 @@ Entity90 = {
 				Radius = "37.5893440246582",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -2989,7 +2989,7 @@ Entity91 = {
 				Radius = "37.5893440246582",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -3024,7 +3024,7 @@ Entity92 = {
 				Radius = "30.589345932006836",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -3943,17 +3943,32 @@ Entity122 = {
 				Radius = "37.5893440246582",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
 	}
 }
 
-Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23, Entity24, Entity25, Entity26, Entity27, Entity28, Entity29, Entity30, Entity31, Entity32, Entity33, Entity34, Entity35, Entity36, Entity37, Entity38, Entity39, Entity40, Entity41, Entity42, Entity43, Entity44, Entity45, Entity46, Entity47, Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63, Entity64, Entity65, Entity66, Entity67, Entity68, Entity69, Entity70, Entity71, Entity72, Entity73, Entity74, Entity75, Entity76, Entity77, Entity78, Entity79, Entity80, Entity81, Entity82, Entity83, Entity84, Entity85, Entity86, Entity87, Entity88, Entity89, Entity90, Entity91, Entity92, Entity93, Entity94, Entity95, Entity96, Entity97, Entity98, Entity99, Entity100, Entity101, Entity102, Entity103, Entity104, Entity105, Entity106, Entity107, Entity108, Entity109, Entity110, Entity111, Entity112, Entity113, Entity114, Entity115, Entity116, Entity117, Entity118, Entity119, Entity120, Entity121, Entity122 }
+Entity123 = {
+	Name = "CollisionBot",
+	Components = {
+		{
+			Name = "TRANSFORM",
+			Arguments = {
+				Position = "0.813310980796814|5.464509963989258|5.160520076751709",
+				Rotation = "false|1.0|2.1855694143368964e-08|0.0|-0.0",
+				Scale = "1.1050000190734863|1.1050000190734863|1.1050000190734863"
+			}
+		}
+	}
+}
+
+Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Entity8, Entity9, Entity10, Entity11, Entity12, Entity13, Entity14, Entity15, Entity16, Entity17, Entity18, Entity19, Entity20, Entity21, Entity22, Entity23, Entity24, Entity25, Entity26, Entity27, Entity28, Entity29, Entity30, Entity31, Entity32, Entity33, Entity34, Entity35, Entity36, Entity37, Entity38, Entity39, Entity40, Entity41, Entity42, Entity43, Entity44, Entity45, Entity46, Entity47, Entity48, Entity49, Entity50, Entity51, Entity52, Entity53, Entity54, Entity55, Entity56, Entity57, Entity58, Entity59, Entity60, Entity61, Entity62, Entity63, Entity64, Entity65, Entity66, Entity67, Entity68, Entity69, Entity70, Entity71, Entity72, Entity73, Entity74, Entity75, Entity76, Entity77, Entity78, Entity79, Entity123, Entity81, Entity82, Entity83, Entity84, Entity85, Entity86, Entity87, Entity88, Entity89, Entity90, Entity91, Entity92, Entity93, Entity94, Entity95, Entity96, Entity97, Entity98, Entity99, Entity100, Entity101, Entity102, Entity103, Entity104, Entity105, Entity106, Entity107, Entity108, Entity109, Entity110, Entity111, Entity112, Entity113, Entity114, Entity115, Entity116, Entity117, Entity118, Entity119, Entity120, Entity121, Entity122 }
 
 CollisionLayers = {
 	Layers = {
-		DEFAULT = ""
+		DEFAULT = "",
+		FLOOR = ""
 	}
 }

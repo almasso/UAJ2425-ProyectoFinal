@@ -41,6 +41,7 @@ namespace damn {
 		/// @brief Direccion de movimiento
 		eden_utils::Vector3 _direction;
 		eden_utils::Vector3 _iniPos;
+		eden_utils::Quaternion _iniRot;
 
 		float stuckRange = 5.f;
 		std::deque<eden_utils::Vector3> lastPositions;

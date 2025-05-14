@@ -739,8 +739,8 @@ CollisionBot = {
 			Name = "BOT_COLLISION",
 			Arguments = {
 				Speed = "10",
-				SendEventTime = "1",
-				AnglesToRotate = "30"
+				SendEventTime = "0.1",
+				AnglesToRotate = "45"
 			}
 		},
 		{

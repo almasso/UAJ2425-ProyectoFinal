@@ -42,6 +42,8 @@ void damn::Bot::Start()
     _transform = _ent->GetComponent<eden_ec::CTransform>();
     _cameraMovement = _ent->GetComponent<damn::CameraMovement>();
     _inputManager = eden_input::InputManager::getInstance();
+    _iniPos = _transform->GetPosition();
+    _iniRot = _transform->GetRotation();
     timerEvent = 0;
     lastPositions = std::deque<eden_utils::Vector3>();
 }
@@ -89,6 +91,7 @@ void damn::Bot::SetPositionEvent()
     
     if (stuck) {
         _transform->SetPosition(_iniPos);
+        _transform->SetRotation(_iniRot);
         lastPositions.clear();
         _direction = eden_utils::Vector3(0, 0, 0);
     }

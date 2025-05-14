@@ -31,7 +31,8 @@ namespace damn {
 		/// @brief Metodo heredado de Component que se usa para coger referencias a otros componentes
 		void Start() override;
 	private:
-		float _anglesToRotate;
+		int _anglesToRotate;
+		bool _coll;
 		void BotMove() override;
 	};
 }
