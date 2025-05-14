@@ -95,7 +95,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\Damn\BootMovement.h" />
+    <ClInclude Include="..\..\src\Damn\Bot.h" />
+    <ClInclude Include="..\..\src\Damn\BotCollides.h" />
+    <ClInclude Include="..\..\src\Damn\BotCollision.h" />
+    <ClInclude Include="..\..\src\Damn\BotMovement.h" />
     <ClInclude Include="..\..\src\Damn\ButtonFunctions.h" />
     <ClInclude Include="..\..\src\Damn\AmmoBoxComponent.h" />
     <ClInclude Include="..\..\src\Damn\CameraMovement.h" />
@@ -131,7 +134,10 @@
     <ClInclude Include="..\..\src\Damn\WeaponManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\Damn\BootMovement.cpp" />
+    <ClCompile Include="..\..\src\Damn\Bot.cpp" />
+    <ClCompile Include="..\..\src\Damn\BotCollides.cpp" />
+    <ClCompile Include="..\..\src\Damn\BotCollision.cpp" />
+    <ClCompile Include="..\..\src\Damn\BotMovement.cpp" />
     <ClCompile Include="..\..\src\Damn\ButtonFunctions.cpp" />
     <ClCompile Include="..\..\src\Damn\AmmoBoxComponent.cpp" />
     <ClCompile Include="..\..\src\Damn\CameraMovement.cpp" />

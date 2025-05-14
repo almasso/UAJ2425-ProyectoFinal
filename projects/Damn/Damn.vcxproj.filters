@@ -44,7 +44,16 @@
     <ClCompile Include="..\..\src\Damn\PositionEvent.cpp">
       <Filter>ProyectoFinal</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\Damn\BootMovement.cpp">
+    <ClCompile Include="..\..\src\Damn\BotMovement.cpp">
+      <Filter>ProyectoFinal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Damn\BotCollides.cpp">
+      <Filter>ProyectoFinal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Damn\BotCollision.cpp">
+      <Filter>ProyectoFinal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Damn\Bot.cpp">
       <Filter>ProyectoFinal</Filter>
     </ClCompile>
   </ItemGroup>
@@ -92,7 +101,16 @@
     <ClInclude Include="..\..\src\Damn\PositionEvent.h">
       <Filter>ProyectoFinal</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\Damn\BootMovement.h">
+    <ClInclude Include="..\..\src\Damn\BotMovement.h">
+      <Filter>ProyectoFinal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Damn\BotCollision.h">
+      <Filter>ProyectoFinal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Damn\BotCollides.h">
+      <Filter>ProyectoFinal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Damn\Bot.h">
       <Filter>ProyectoFinal</Filter>
     </ClInclude>
   </ItemGroup>
