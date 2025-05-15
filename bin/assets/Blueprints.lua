@@ -691,13 +691,7 @@ MovementBot = {
 				StuckRange = "5.0",
 				NumCheckPositions = "20"
 			}
-		},
-		{
-            Name = "MESH_RENDERER",
-            Arguments = {
-                Mesh = "cube"
-            }
-        }
+		}
     }
 }
 
@@ -732,7 +726,9 @@ CollisionBot = {
 			Arguments = {
 				Speed = "10",
 				SendEventTime = "0.1",
-				AnglesToRotate = "45"
+				AnglesToRotate = "45",
+				StuckRange = "5.0",
+				NumCheckPositions = "20"
 			}
 		},
 		{
