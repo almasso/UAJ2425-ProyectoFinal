@@ -107,6 +107,27 @@
 
 /*
 
+			ESPERA ACTIVA
+
+*/
+
+/*
+	EDENcm incorpora una forma de espera activa utilizando wait:
+	
+	funcion1(param1);
+	wait 3s;
+	funcion2(param2);
+	
+	Entre la finalizacion de funcion1 y la ejecucion de funcion2 se esperaran 3 segundos.
+	
+	Unidades permitidas: s (segundos), ms(milisegundos)
+
+*/
+
+// *******************************************************************************************************************************************************************************************************
+
+/*
+
 			TIPOS BÁSICOS
 
 */

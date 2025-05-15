@@ -58,6 +58,7 @@ eden_command::EDENcm_Token eden_command::EDENcm_Lexer::nextToken() {
 		if (ident == "loop") return { EDENcm_TokenType::KeywordLoop, ident, _line, _column };
 		if (ident == "debug") return { EDENcm_TokenType::KeywordDebug, ident, _line, _column };
 		if (ident == "disable") return { EDENcm_TokenType::KeywordDisable, ident, _line, _column };
+		if (ident == "wait") return { EDENcm_TokenType::KeywordWait, ident, _line, _column };
 		return { EDENcm_TokenType::Identifier, ident, _line, _column };
 	}
 

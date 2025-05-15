@@ -12,6 +12,7 @@ namespace eden_command {
 		KeywordLoop, // Palabra reservada "loop" para bucles.
 		KeywordDebug, // Palabra reservada "debug" para salida debug.
 		KeywordDisable, // Palabra reservada "disable" para desactivar salida debug.
+		KeywordWait, // Palabra reservada "wait" para esperar entre instruccion e instruccion.
 		SymbolLeftShift, // Simbolo <<
 		SymbolRightShift, // Simbolo >>
 		Comma, // Coma (simbolo ,)

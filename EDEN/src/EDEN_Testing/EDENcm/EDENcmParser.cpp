@@ -40,6 +40,7 @@ eden_command::EDENcm_Statement* eden_command::EDENcm_Parser::parseStatement() {
 	if (match(EDENcm_TokenType::KeywordLoop)) return parseLoop();
 	if (match(EDENcm_TokenType::KeywordDebug)) return parseDebug();
 	if (match(EDENcm_TokenType::KeywordDisable)) return parseDisable();
+	if (match(EDENcm_TokenType::KeywordWait)) return parseWait();
 	return parseFunctionCall();
 }
 
@@ -127,7 +128,21 @@ eden_command::EDENcm_Statement* eden_command::EDENcm_Parser::parseDisable() {
 		match(EDENcm_TokenType::BracketClose);
 		dis->range = std::make_pair(from, to);
 	}
-	match(EDENcm_TokenType::SymbolLeftShift);
+	match(EDENcm_TokenType::SymbolRightShift);
 	dis->inner = parseStatement();
 	return dis;
+}
+
+eden_command::EDENcm_Statement* eden_command::EDENcm_Parser::parseWait() {
+	float seconds = 0.0f;
+	seconds = std::stof(advance().text);
+	std::string unit = advance().text;
+	if (unit == "s") seconds *= 1.0f;
+	else if (unit == "ms") seconds /= 1000.0f;
+	else seconds = 0.0f;
+	match(EDENcm_TokenType::Semicolon);
+
+	auto waitStmt = new EDENcm_Wait();
+	waitStmt->waitSeconds = seconds;
+	return waitStmt;
 }

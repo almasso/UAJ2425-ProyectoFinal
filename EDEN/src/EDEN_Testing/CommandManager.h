@@ -13,10 +13,19 @@
 
 namespace eden_command {
 
+	struct ScriptExecutionContext {
+		std::vector<EDENcm_Statement*> statements;
+		size_t currentStatementIndex = 0;
+		std::string debugName;
+		bool finished = false;
+	};
+
 	class CommandManager : public Singleton<CommandManager> {
 		/// @brief Para obtener la funcionalidad del patron Singleton
 	public:
 		friend Singleton<CommandManager>;
+
+		EDEN_API ~CommandManager();
 
 		EDEN_API static CommandManager* getInstance();
 
@@ -39,7 +48,13 @@ namespace eden_command {
 
 		void disableDebug();
 
+		void startWait(float seconds);
+
 		void setDisableRange(int from, int to);
+
+		bool isWaiting() const;
+
+		EDEN_API void Update(float dT);
 
 		void setCurrentStatementIndex(int index);
 
@@ -47,6 +62,8 @@ namespace eden_command {
 
 	private:
 		std::unordered_map<std::string, std::function<void(std::vector<Argument>)>> _currentFunctions;
+
+		std::vector<ScriptExecutionContext> _activeScripts;
 		
 		bool _debugEnabled = false;
 		
@@ -61,6 +78,10 @@ namespace eden_command {
 		int _debugLine = -1;
 		
 		int _debugColumn = -1;
+
+		float _time = 0.0f;
+
+		float _waitTime = 0.0f;
 
 		/// @brief Constructor por defecto
 		EDEN_API CommandManager() = default;

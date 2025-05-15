@@ -28,6 +28,8 @@ namespace eden_command {
 
 		EDENcm_Statement* parseDisable();
 
+		EDENcm_Statement* parseWait();
+
 		const EDENcm_Token& peek(int offset = 0) const;
 
 		const EDENcm_Token& advance();

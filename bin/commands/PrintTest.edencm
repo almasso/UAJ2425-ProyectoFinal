@@ -1,4 +1,7 @@
+print("En 4 segundos deberia printearse el resto de cosas!");
+wait 4.0 s;
 debug << loop 14 {
-	print("Esto se esta lanzando desde un script");
+	disable [0:6] >> print("Esto se esta lanzando desde un script");
+	wait 1.0 s;
 	juegoTest();
 };
