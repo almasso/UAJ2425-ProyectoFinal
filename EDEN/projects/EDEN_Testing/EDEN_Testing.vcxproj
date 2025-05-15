@@ -86,10 +86,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\EDEN_Testing\CommandManager.cpp" />
+    <ClCompile Include="..\..\src\EDEN_Testing\EDENcm\EDENcmLexer.cpp" />
+    <ClCompile Include="..\..\src\EDEN_Testing\EDENcm\EDENcmParser.cpp" />
+    <ClCompile Include="..\..\src\EDEN_Testing\EDENcm\EDENcmStatements.cpp" />
     <ClCompile Include="..\..\src\EDEN_Testing\EDENCommands.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\EDEN_Testing\CommandManager.h" />
+    <ClInclude Include="..\..\src\EDEN_Testing\EDENcm\EDENcmLexer.h" />
+    <ClInclude Include="..\..\src\EDEN_Testing\EDENcm\EDENcmParser.h" />
+    <ClInclude Include="..\..\src\EDEN_Testing\EDENcm\EDENcmStatements.h" />
+    <ClInclude Include="..\..\src\EDEN_Testing\EDENcm\EDENcmToken.h" />
     <ClInclude Include="..\..\src\EDEN_Testing\EDENCommands.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

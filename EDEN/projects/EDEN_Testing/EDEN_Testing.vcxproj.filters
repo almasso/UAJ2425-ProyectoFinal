@@ -21,12 +21,33 @@
     <ClCompile Include="..\..\src\EDEN_Testing\EDENCommands.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\EDEN_Testing\EDENcm\EDENcmLexer.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\EDEN_Testing\EDENcm\EDENcmParser.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\EDEN_Testing\EDENcm\EDENcmStatements.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\EDEN_Testing\CommandManager.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\EDEN_Testing\EDENCommands.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\EDEN_Testing\EDENcm\EDENcmLexer.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\EDEN_Testing\EDENcm\EDENcmParser.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\EDEN_Testing\EDENcm\EDENcmStatements.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\EDEN_Testing\EDENcm\EDENcmToken.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

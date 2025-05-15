@@ -70,12 +70,18 @@ void RegisterComponents() {
 	factory->RegisterComponent<damn::BotCollides>();
 }
 
+static void funcionPrueba(std::vector<eden_command::Argument> args) {
+	std::cout << "Este cout se hace desde el juego" << std::endl;
+}
+
 void RegisterCommands() {
 	eden_command::CommandManager* instance = eden_command::CommandManager::getInstance();
 	//instance->RegisterFunction();
+	instance->RegisterFunction("juegoTest", funcionPrueba);
 }
 
 void LoadScene() {
+	eden_command::CommandManager::getInstance()->ExecuteScripts();
 	eden::SceneManager* scnManager = eden::SceneManager::getInstance();
 	// Desactiva los mensajes en consola al crear entidades 
 	scnManager->SetDebugLog(false);

@@ -7,35 +7,68 @@
 #include <functional>
 #include <any>
 #include <type_traits>
+#include <fstream>
+#include <optional>
+#include "EDENcm/EDENcmStatements.h"
 
 namespace eden_command {
 
-	class CommandManager : public Singleton<CommandManager>
-	{
+	class CommandManager : public Singleton<CommandManager> {
 		/// @brief Para obtener la funcionalidad del patron Singleton
-	private:
-		std::unordered_map<std::string, std::function<void(std::vector<std::any>)>> _currentFunctions;
-
-		/// @brief Constructor por defecto
-		EDEN_API CommandManager() = default;
 	public:
 		friend Singleton<CommandManager>;
+
 		EDEN_API static CommandManager* getInstance();
 
-		EDEN_API inline void RegisterFunction(const std::string& functionName, std::function<void(std::vector<std::any>)> functionToRegister) {
+		EDEN_API inline void RegisterFunction(const std::string& functionName, std::function<void(std::vector<Argument>)> functionToRegister) {
 			_currentFunctions[functionName] = functionToRegister;
 		}
 
 		template<typename... Ts>
-		EDEN_API inline void ExecuteFunction(const std::string& functionName, Ts&&... args) {
-			if (_currentFunctions.count(functionName)){
-				std::vector<std::any> vecArgs{ std::forward<Ts>(args)... };
-				_currentFunctions[functionName](vecArgs);
+		inline void ExecuteFunction(const std::string& functionName, Ts&&... args) {
+			if (_currentFunctions.count(functionName)) {
+				_currentFunctions[functionName](std::forward<Ts>(args)...);
 			}
 		}
+
+		EDEN_API void ExecuteScripts();
+
+		void setDebugLocation(int line, int column);
+
+		void enableDebug();
+
+		void disableDebug();
+
+		void setDisableRange(int from, int to);
+
+		void setCurrentStatementIndex(int index);
+
+		EDEN_API void logDebugMessage(const std::string& message, bool isError = false);
+
+	private:
+		std::unordered_map<std::string, std::function<void(std::vector<Argument>)>> _currentFunctions;
+		
+		bool _debugEnabled = false;
+		
+		std::optional<std::pair<int, int>> _disabledRange;
+		
+		int _currentStatementIndex = 0;
+		
+		std::ofstream _debugFile;
+		
+		std::string _outputFilepath;
+		
+		int _debugLine = -1;
+		
+		int _debugColumn = -1;
+
+		/// @brief Constructor por defecto
+		EDEN_API CommandManager() = default;
+
+		void openDebugFile(const std::string& scriptFilename);
+
+		void closeDebugFile();
 	};
 }
-#include <iostream>
-
 
 #endif // !EDEN_COMMAND_MANAGER_H

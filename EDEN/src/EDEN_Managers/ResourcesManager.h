@@ -15,6 +15,7 @@
 #define UI_ROUTE "assets\\textures\\"
 #define FONTS_ROUTE "assets\\fonts\\"
 #define DEFAULT_ROUTE  "assets\\default\\"
+#define COMMANDS_ROUTE "commands\\"
 #define BIN_ROUTE  ".\\"
 #endif
 #ifdef __APPLE__
@@ -39,6 +40,7 @@ namespace eden_resources {
             UI,
             Fonts,
             Audio,
+            Commands,
             Default,
             Bin
         };
@@ -63,6 +65,9 @@ namespace eden_resources {
         /// @brief Devuelve el nombre de los audios
         EDEN_API std::set<std::string> GetAudios();
 
+        /// @brief UAJ: Devuelve el nombre de los ficheros de comandos
+        EDEN_API std::set<std::string> GetCommands();
+
         /// @brief Devuelve las fuentes
         EDEN_API std::set<std::string> GetFonts();
         
@@ -77,6 +82,9 @@ namespace eden_resources {
 
         /// @brief Devuelve las rutas a los audios
         EDEN_API std::set<std::string> GetRoutesAudios();
+
+        /// @brief UAJ: Devuelve las rutas a los comandos 
+        EDEN_API std::set<std::string> GetRoutesCommands();
 
         /// @brief Devuelve las rutas a las fuetnes
         EDEN_API std::set<std::string> GetRoutesFonts();
@@ -96,7 +104,7 @@ namespace eden_resources {
         std::vector<std::set<std::string>> _resourcesRutesGeneral;
 
         /// @brief Vector de rutas de directorios
-        std::vector<std::string> _routes { MESH_ROUTE, MATERIALS_ROUTE, UI_ROUTE, FONTS_ROUTE, AUDIO_ROUTE, DEFAULT_ROUTE, BIN_ROUTE };
+        std::vector<std::string> _routes { MESH_ROUTE, MATERIALS_ROUTE, UI_ROUTE, FONTS_ROUTE, AUDIO_ROUTE, COMMANDS_ROUTE, DEFAULT_ROUTE, BIN_ROUTE };
     };
 }
 

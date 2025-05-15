@@ -1,0 +1,128 @@
+// Ejemplo de fichero de los comandos de EDEN (edencm)
+
+/*
+
+			COMENTARIOS
+
+*/
+
+
+// Para escribir un comentario se utiliza //
+
+/*
+
+	Para escribir un comentario multilineal, se utiliza /**/
+
+*/
+
+// *******************************************************************************************************************************************************************************************************
+
+/*
+
+			COMANDOS
+
+*/
+
+// Para llamar a un comando:
+// nombreDelComandoRegistrado(param1, param2, param3...); // Importante el ; al final de las llamadas
+
+// Los comandos se leen de arriba a abajo en el fichero, y se ejecutan todos los archivos que estén en la carpeta /bin/commands/ en orden alfabético.
+
+// *******************************************************************************************************************************************************************************************************
+
+/*
+
+			BUCLES
+
+*/
+
+// Para facilitar la llamada a algunas funciones, se han implementado bucles. Todos los comandos dentro del bucle se ejecutarán en orden tantas veces como iteraciones se requieran.
+
+/*
+
+		loop numeroDeIteraciones {
+			comando1(param1);
+			comando2(param1, param2, param3);
+		};
+
+*/
+
+// Los bucles se pueden concatenar unos dentro de otros:
+
+/*
+
+		loop 14 {
+			comando1(param1); // Se ejecutará 14 veces
+			loop 16 {
+				comando2(param1); // Se ejecutará 14 * 16 veces
+			};
+		};
+
+*/
+
+// *******************************************************************************************************************************************************************************************************
+
+/*
+
+			SALIDA DEBUG A FICHERO
+
+*/
+
+/* 
+	Para poder debugear si los comandos se han ejecutado, se puede añadir antes de la llamada a una función o a un bucle la siguiente orden:
+
+			debug << funcion1(param1);
+			
+					ó
+					
+			debug << loop 15 {
+				funcion1(param1);
+				funcion2(param2);
+			};
+
+
+	El volcado de la salida debug se hará en el fichero [NOMBRE_DEL_FICHERO].ecmout.
+*/
+
+
+/*
+	Dentro de un bucle, se puede desactivar la salida debug de una determinada función si no la deseamos durante todo el bucle o durante un determinado lapso de iteraciones:
+	
+	
+	debug << loop 15 {
+		disable >> function1(param1);
+		disable [0:6] >> function2(param1);
+		function3(param2);
+		loop 4 {
+			function4();
+		};
+	};
+	
+	En este ejemplo, en la salida debug tendremos 0 salidas debug de function1, 8 salidas debug de function2 (las iteraciones 0 hasta la 6 incluída se han saltado), 15 salidas debug de function3, y 15*4 salidas debug de function4.
+
+
+*/
+
+// *******************************************************************************************************************************************************************************************************
+
+/*
+
+			TIPOS BÁSICOS
+
+*/
+
+/*
+	EDENcm soporta los siguientes tipos básicos:
+	
+	CADENAS DE TEXTO: "estoEsUnaCadena"
+	
+	ENTEROS: 1, 40, 1289
+	
+	DECIMALES EN PUNTO FLOTANTE: 1.146, 14.485
+	
+	BOOLEANOS: true, false
+	
+	VECTORES: vec3(1.485, 1236.15, 10.0)
+
+*/
+

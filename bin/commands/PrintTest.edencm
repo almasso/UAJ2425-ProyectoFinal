@@ -1,0 +1,4 @@
+debug << loop 14 {
+	print("Esto se esta lanzando desde un script");
+	juegoTest();
+};

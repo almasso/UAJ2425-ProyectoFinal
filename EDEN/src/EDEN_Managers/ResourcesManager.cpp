@@ -56,6 +56,10 @@ std::set<std::string>  eden_resources::ResourcesManager::GetAudios() {
 	return _resourcesGeneral[Resources::Audio];
 }
 
+std::set<std::string> eden_resources::ResourcesManager::GetCommands() {
+	return _resourcesGeneral[Resources::Commands];
+}
+
 std::set<std::string>  eden_resources::ResourcesManager::GetFonts() {
 	return _resourcesGeneral[Resources::Fonts];
 }
@@ -76,6 +80,10 @@ EDEN_API std::set<std::string> eden_resources::ResourcesManager::GetRoutesUIElem
 
 std::set<std::string>  eden_resources::ResourcesManager::GetRoutesAudios() {
 	return _resourcesRutesGeneral[Resources::Audio];
+}
+
+std::set<std::string> eden_resources::ResourcesManager::GetRoutesCommands() {
+	return _resourcesRutesGeneral[Resources::Commands];
 }
 
 std::set<std::string>  eden_resources::ResourcesManager::GetRoutesFonts() {

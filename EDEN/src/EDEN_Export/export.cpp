@@ -87,7 +87,7 @@ void RegisterEngineComponents() {
 void RegisterCommandEngineFunctions() {
 	eden_command::CommandManager::getInstance()->RegisterFunction("InstantiateBlueprint", eden_command::EDENCommands::InstantiateBlueprint);
 	eden_command::CommandManager::getInstance()->RegisterFunction("ChangeScene", eden_command::EDENCommands::ChangeScene);
-
+	eden_command::CommandManager::getInstance()->RegisterFunction("print", eden_command::EDENCommands::print);
 }
 
 void eden_export::RunEDEN()

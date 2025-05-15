@@ -2,7 +2,7 @@
 #ifndef EDEN_VECTOR3_H
 #define EDEN_VECTOR3_H
 
-#include<array>
+#include <array>
 #include "defs.h"
 
 namespace eden_utils {
