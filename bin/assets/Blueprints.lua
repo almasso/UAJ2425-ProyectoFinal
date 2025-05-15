@@ -756,5 +756,25 @@ CollisionBot = {
     }
 }
 
+HeatMapPoint = {
+    Name = "HeatMapPoint",
+    Components = {
+        {
+            Name = "TRANSFORM",
+            Arguments = {
+                Position = "0|0|0",
+                Rotation = "false|1.0|0.0|0.0|0.0",
+                Scale = "1|1|1"
+            }
+        },
+		{
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "Crate"
+            }
+        }
+    }
+}
+
 Blueprints = { Cube, Bullet, ShotgunShell, EnemyBullet, Player, Wall, Floor, Enemy, EnemyHarder, Ammo, MenuBullet, 
-ScoreText, VignetteEffect, WinText, FinalScoreText, MainMenuButton, Cursor, healthEffect, LoseText,MovementBot, CollisionBot }
+ScoreText, VignetteEffect, WinText, FinalScoreText, MainMenuButton, Cursor, healthEffect, LoseText,MovementBot, CollisionBot, HeatMapPoint }

@@ -32,6 +32,11 @@ namespace eden_utils {
 		/// @return Vector resultante
 		EDEN_API Vector3 operator=(Vector3 other);
 
+		/// @brief Compara un vector a otro
+		/// @param other Vector al que compararse
+		/// @return Si los dos vectores son iguales
+		EDEN_API bool operator==(Vector3 other) const;
+
 		/// @brief Suma de dos vectores
 		/// @param other Vector al que suma
 		/// @return Vector resultante

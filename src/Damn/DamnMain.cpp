@@ -34,6 +34,7 @@
 #include "CommandManager.h"
 #include "BotCollides.h"
 #include "BotCollision.h"
+#include "HeatMapDrawer.h"
 
 #include <chrono>      
 #include <string>   
@@ -68,6 +69,7 @@ void RegisterComponents() {
 	factory->RegisterComponent<damn::BotMovement>();
 	factory->RegisterComponent<damn::BotCollision>();
 	factory->RegisterComponent<damn::BotCollides>();
+	factory->RegisterComponent<damn::HeatMapDrawer>();
 }
 
 static void funcionPrueba(std::vector<eden_command::Argument> args) {

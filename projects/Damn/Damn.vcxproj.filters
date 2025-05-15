@@ -56,6 +56,9 @@
     <ClCompile Include="..\..\src\Damn\Bot.cpp">
       <Filter>ProyectoFinal</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Damn\HeatMapDrawer.cpp">
+      <Filter>ProyectoFinal</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Damn\CameraMovement.h" />
@@ -111,6 +114,9 @@
       <Filter>ProyectoFinal</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Damn\Bot.h">
+      <Filter>ProyectoFinal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Damn\HeatMapDrawer.h">
       <Filter>ProyectoFinal</Filter>
     </ClInclude>
   </ItemGroup>

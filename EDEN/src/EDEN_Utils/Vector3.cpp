@@ -25,6 +25,11 @@ eden_utils::Vector3 eden_utils::Vector3::operator=(Vector3 other)
 	return *this;
 }
 
+bool eden_utils::Vector3::operator==(Vector3 other) const
+{
+	return _x == other._x && _y == other._y && _z == other._z;
+}
+
 eden_utils::Vector3 eden_utils::Vector3::operator+(Vector3 other)
 {
 	return Vector3(_x + other._x, _y + other._y, _z + other._z);
