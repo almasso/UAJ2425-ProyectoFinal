@@ -691,8 +691,10 @@ MovementBot = {
 			Name = "BOT_MOVEMENT",
 			Arguments = {
 				Speed = "10",
-				SendEventTime = "1",
-				ChangeDirectionTime = "0.5"
+				SendEventTime = "0.5",
+				ChangeDirectionTime = "1.5",
+				StuckRange = "5.0",
+				NumCheckPositions = "20"
 			}
 		}
     }

@@ -34,6 +34,8 @@ void damn::Bot::Init(eden_script::ComponentArguments* args)
 {
     _speed = args->GetValueToFloat("Speed");
     timeToSendEvent = args->GetValueToFloat("SendEventTime");
+    stuckRange = args->GetValueToFloat("StuckRange");
+    numLastPositions = args->GetValueToInt("NumCheckPositions");
 }
 
 void damn::Bot::Start()
@@ -46,6 +48,8 @@ void damn::Bot::Start()
     _iniRot = _transform->GetRotation();
     timerEvent = 0;
     lastPositions = std::deque<eden_utils::Vector3>();
+    isStuck = false;
+    _rigidBody->SetTemporalDeactivation(true);
 }
 
 float damn::Bot::distanceSquared(eden_utils::Vector3 a, eden_utils::Vector3 b)
@@ -76,20 +80,20 @@ bool damn::Bot::IsStuck()
 
 void damn::Bot::SetPositionEvent()
 {
-    bool stuck = false;
+    isStuck = false;
     lastPositions.push_back(_transform->GetPosition());
     if (lastPositions.size() == numLastPositions) {
-        stuck = IsStuck();
+        isStuck = IsStuck();
         lastPositions.pop_front();
     }
 
-    PositionEvent* _pos = new PositionEvent(stuck, _transform->GetPosition().GetX(), _transform->GetPosition().GetY(), _transform->GetPosition().GetZ());
+    PositionEvent* _pos = new PositionEvent(isStuck, _transform->GetPosition().GetX(), _transform->GetPosition().GetY(), _transform->GetPosition().GetZ());
     if (Tracker::Instance()) {
         Tracker::Instance()->TrackEvent(_pos);
     }
     else delete _pos;
     
-    if (stuck) {
+    if (isStuck) {
         _transform->SetPosition(_iniPos);
         _transform->SetRotation(_iniRot);
         lastPositions.clear();
