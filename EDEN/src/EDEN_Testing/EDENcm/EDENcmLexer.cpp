@@ -62,7 +62,7 @@ eden_command::EDENcm_Token eden_command::EDENcm_Lexer::nextToken() {
 		return { EDENcm_TokenType::Identifier, ident, _line, _column };
 	}
 
-	if (std::isdigit(c)) {
+	if (std::isdigit(c) || c == '-') {
 		std::string num(1, c);
 		bool hasDot = false;
 		while (std::isdigit(peek()) || (!hasDot && peek() == '.')) {

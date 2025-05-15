@@ -3,6 +3,7 @@
 #include "Vector3.h"
 #include <iostream>
 #include "CommandManager.h"
+#include "InputManager.h"
 
 void eden_command::EDENCommands::InstantiateBlueprint(std::vector<Argument> params)
 {
@@ -49,6 +50,11 @@ void eden_command::EDENCommands::ChangeScene(std::vector<Argument> params)
 	else {
 		CommandManager::getInstance()->logDebugMessage("At ChangeScene: 'sceneID' value is not of type string", true);
 	}
+}
+
+void eden_command::EDENCommands::Close(std::vector<Argument> params)
+{
+	eden_input::InputManager::getInstance()->SetCloseWindow();
 }
 
 void eden_command::EDENCommands::print(std::vector<Argument> params) {

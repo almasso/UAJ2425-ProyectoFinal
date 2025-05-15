@@ -9,6 +9,7 @@ namespace eden_command {
 	public:
 		static void InstantiateBlueprint(std::vector<Argument> params);
 		static void ChangeScene(std::vector<Argument> params);
+		static void Close(std::vector<Argument> params);
 		static void print(std::vector<Argument> params);
 	};
 }

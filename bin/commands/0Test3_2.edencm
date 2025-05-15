@@ -1,0 +1,10 @@
+wait 1.0 s;
+ChangeScene("DamnGame_level3")
+wait 0.5 s;
+loop 20 {
+	InstantiateBlueprint("CollisionBot", vec3(-4.900733470916748, 5.348429203033447, 25.685970306396484));
+	wait 0.1 s;
+};
+
+
+wait 3.0 s;

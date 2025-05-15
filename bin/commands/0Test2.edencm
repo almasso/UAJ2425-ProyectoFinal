@@ -1,0 +1,10 @@
+wait 1.0 s;
+ChangeScene("DamnGame_level2")
+wait 0.5 s;
+loop 20 {
+	InstantiateBlueprint("MovementBot", vec3(0.8133107423782349, 5.464506149291992, 5.160520076751709));
+	wait 0.1 s;
+};
+
+
+wait 3.0 s;

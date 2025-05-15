@@ -150,7 +150,7 @@ EnemyBullet = {
 				Radius = "0.2",
 				Shape = "SPHERE",
 				CollisionFlag = "DINAMIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "PLAYER",
 				Trigger = "true"
 			}
 		},
@@ -672,21 +672,16 @@ MovementBot = {
 				Radius = "0.0",
 				Shape = "BOX",
 				CollisionFlag = "DYNAMIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "BOT",
 				Trigger = "false"
 			}
 		},
 		{
-			Name = "CAMERA",
-			Arguments = {
-			}
-		},
-		{
-			Name = "CAMERA_MOVEMENT",
-			Arguments = { 
-				Sensivity = "0.1"
-			}
-		},
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "Demon"
+            }
+        },
 		{
 			Name = "BOT_MOVEMENT",
 			Arguments = {
@@ -694,7 +689,13 @@ MovementBot = {
 				SendEventTime = "1",
 				ChangeDirectionTime = "0.5"
 			}
-		}
+		},
+		{
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "cube"
+            }
+        }
     }
 }
 
@@ -720,19 +721,8 @@ CollisionBot = {
 				Radius = "0.0",
 				Shape = "BOX",
 				CollisionFlag = "DYNAMIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "BOT",
 				Trigger = "false"
-			}
-		},
-		{
-			Name = "CAMERA",
-			Arguments = {
-			}
-		},
-		{
-			Name = "CAMERA_MOVEMENT",
-			Arguments = { 
-				Sensivity = "0.1"
 			}
 		},
 		{
@@ -752,7 +742,13 @@ CollisionBot = {
 		{
 			Name = "BOT_COLLIDES",
 			Arguments = {}
-		}
+		},
+		{
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "Demon"
+            }
+        }
     }
 }
 

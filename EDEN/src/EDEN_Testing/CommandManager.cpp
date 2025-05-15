@@ -114,6 +114,8 @@ void eden_command::CommandManager::Update(float dT) {
 			ctx.statements.clear();
 			closeDebugFile();
 		}
+
+		break;
 	}
 
 	_debugLine = 0;
