@@ -1,7 +1,6 @@
 #include "HeatMapDrawer.h"
 #include "SceneManager.h"
 #include <iostream>
-#include <Entity.h>
 #include <CMeshRenderer.h>
 #include <Transform.h>
 #include <ComponentArguments.h>
@@ -19,12 +18,12 @@ void damn::HeatMapDrawer::ShowHeatMapData()
     for (auto cell : parsedGridPositions) {
         spawnPosition = cell.first;
         spawnPosition *= _gridSize;
-        float numInCell = cell.second;
-        eden_ec::Entity* e = eden::SceneManager::getInstance()->InstantiateBlueprint("HeatMapPoint", spawnPosition);
-        eden_utils::Vector3 scale(numInCell / _maxGridValue, numInCell / _maxGridValue, numInCell / _maxGridValue);
-        //std::cout << "Nueva escala: " << scale.GetX() << " " << scale.GetY() << " " << scale.GetZ() << std::endl;
+        float scaleFactor = cell.second / _maxGridValue;
+        eden_ec::Entity* e = InstanceHeatSphere(scaleFactor, spawnPosition);
+        eden_utils::Vector3 scale(scaleFactor, scaleFactor, scaleFactor);
+        std::cout << "Nueva escala: " << scale.GetX() << " " << scale.GetY() << " " << scale.GetZ() << "  Count " << cell.second << "  max: " << _maxGridValue << std::endl;
         e->GetComponent<eden_ec::CTransform>()->SetScale(scale);
-        e->GetComponent<eden_ec::CMeshRenderer>()->SetMaterial("Wall");
+        //e->GetComponent<eden_ec::CMeshRenderer>()->SetMaterial("Wall");
     }
 }
 
@@ -44,6 +43,28 @@ void damn::HeatMapDrawer::ParseReadData()
         }
     }
 }
+
+eden_ec::Entity* damn::HeatMapDrawer::InstanceHeatSphere(float scaleFactor, const eden_utils::Vector3& spawnPosition)
+{
+    eden_ec::Entity* spawnedEntity = nullptr;
+    if (scaleFactor <= 0.2) {
+        spawnedEntity = eden::SceneManager::getInstance()->InstantiateBlueprint("YellowSphere", spawnPosition);
+    }
+    else if (scaleFactor <= 0.4) {
+        spawnedEntity = eden::SceneManager::getInstance()->InstantiateBlueprint("YellowMidSphere", spawnPosition);
+    }
+    else if (scaleFactor <= 0.6) {
+        spawnedEntity = eden::SceneManager::getInstance()->InstantiateBlueprint("OrangeSphere", spawnPosition);
+    }
+    else if (scaleFactor <= 0.8) {
+        spawnedEntity = eden::SceneManager::getInstance()->InstantiateBlueprint("OrangeMidSphere", spawnPosition);
+    }
+    else{
+        spawnedEntity = eden::SceneManager::getInstance()->InstantiateBlueprint("RedSphere", spawnPosition);
+    }
+    return spawnedEntity;
+}
+
 
 void damn::HeatMapDrawer::Init(eden_script::ComponentArguments* args)
 {

@@ -3978,7 +3978,7 @@ Entity124 = {
 		{
 			Name = "HEAT_MAP_DRAWER",
 			Arguments = {
-				GridSize = "1",
+				GridSize = "10",
 				File = "test.txt"
 			}
 		}

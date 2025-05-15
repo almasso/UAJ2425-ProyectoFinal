@@ -4,6 +4,7 @@
 #include <Vector3.h>
 #include <vector>
 #include <unordered_map>
+#include <Entity.h>
 #include <functional>
 
 namespace std {
@@ -35,6 +36,7 @@ namespace damn {
 		void Start() override;
 
 		void ParseReadData();
+		eden_ec::Entity* InstanceHeatSphere(float scaleFactor, const eden_utils::Vector3& spawnPosition);
 
 		bool _alreadyShownPoints = false;
 		float _gridSize = 10.f;

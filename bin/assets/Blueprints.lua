@@ -770,11 +770,111 @@ HeatMapPoint = {
 		{
             Name = "MESH_RENDERER",
             Arguments = {
-                Mesh = "Crate"
+                Mesh = "Sphere"
+            }
+        }
+    }
+}
+
+YellowSphere = {
+    Name = "YellowSphere",
+    Components = {
+        {
+            Name = "TRANSFORM",
+            Arguments = {
+                Position = "0|0|0",
+                Rotation = "false|1.0|0.0|0.0|0.0",
+                Scale = "1|1|1"
+            }
+        },
+		{
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "YellowSphere"
+            }
+        }
+    }
+}
+
+YellowMidSphere = {
+    Name = "YellowMidSphere",
+    Components = {
+        {
+            Name = "TRANSFORM",
+            Arguments = {
+                Position = "0|0|0",
+                Rotation = "false|1.0|0.0|0.0|0.0",
+                Scale = "1|1|1"
+            }
+        },
+		{
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "YellowMidSphere"
+            }
+        }
+    }
+}
+
+OrangeSphere = {
+    Name = "OrangeSphere",
+    Components = {
+        {
+            Name = "TRANSFORM",
+            Arguments = {
+                Position = "0|0|0",
+                Rotation = "false|1.0|0.0|0.0|0.0",
+                Scale = "1|1|1"
+            }
+        },
+		{
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "OrangeSphere"
+            }
+        }
+    }
+}
+
+OrangeMidSphere = {
+    Name = "OrangeMidSphere",
+    Components = {
+        {
+            Name = "TRANSFORM",
+            Arguments = {
+                Position = "0|0|0",
+                Rotation = "false|1.0|0.0|0.0|0.0",
+                Scale = "1|1|1"
+            }
+        },
+		{
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "OrangeMidSphere"
+            }
+        }
+    }
+}
+
+RedSphere = {
+    Name = "RedSphere",
+    Components = {
+        {
+            Name = "TRANSFORM",
+            Arguments = {
+                Position = "0|0|0",
+                Rotation = "false|1.0|0.0|0.0|0.0",
+                Scale = "1|1|1"
+            }
+        },
+		{
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "RedSphere"
             }
         }
     }
 }
 
 Blueprints = { Cube, Bullet, ShotgunShell, EnemyBullet, Player, Wall, Floor, Enemy, EnemyHarder, Ammo, MenuBullet, 
-ScoreText, VignetteEffect, WinText, FinalScoreText, MainMenuButton, Cursor, healthEffect, LoseText,MovementBot, CollisionBot, HeatMapPoint }
+ScoreText, VignetteEffect, WinText, FinalScoreText, MainMenuButton, Cursor, healthEffect, LoseText,MovementBot, CollisionBot, YellowSphere, YellowMidSphere, OrangeSphere, OrangeMidSphere, RedSphere }
