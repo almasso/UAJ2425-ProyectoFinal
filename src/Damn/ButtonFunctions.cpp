@@ -73,7 +73,7 @@ void damn::ButtonFunctions::Click() {
 
 void damn::ButtonFunctions::StartGame() {
 	eden::SceneManager* mngr = eden::SceneManager::getInstance();
-	mngr->ChangeScene("DamnGame_level_TEST2");
+	mngr->ChangeScene("DamnGame_level1");
 	mngr->FindEntity("GAME_MANAGER")->GetComponent<GameManager>()->Play();
 }
 

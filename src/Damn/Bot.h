@@ -45,7 +45,7 @@ namespace damn {
 
 		float stuckRange = 5.f;
 		std::deque<eden_utils::Vector3> lastPositions;
-		int numLastPositions = 120;
+		int numLastPositions = 40;
 
 
 		/// @brief Referencia al RigidBody
@@ -61,6 +61,8 @@ namespace damn {
 		float _speed = 0.0f;
 		float timerEvent;
 		float timeToSendEvent = 0.5f;
+
+		bool isStuck;
 
 		float distanceSquared(eden_utils::Vector3 a, eden_utils::Vector3 b);
 		bool IsStuck();
