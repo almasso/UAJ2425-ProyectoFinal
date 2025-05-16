@@ -83,7 +83,7 @@ void RegisterCommands() {
 }
 
 void LoadScene() {
-	//eden_command::CommandManager::getInstance()->ExecuteScripts();
+	eden_command::CommandManager::getInstance()->ExecuteScripts();
 	eden::SceneManager* scnManager = eden::SceneManager::getInstance();
 	// Desactiva los mensajes en consola al crear entidades 
 	scnManager->SetDebugLog(false);

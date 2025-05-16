@@ -38,9 +38,14 @@ namespace eden_command {
 			if (_currentFunctions.count(functionName)) {
 				_currentFunctions[functionName](std::forward<Ts>(args)...);
 			}
+			else {
+				stopCurrentScript();
+			}
 		}
 
 		EDEN_API void ExecuteScripts();
+
+		void stopCurrentScript();
 
 		void setDebugLocation(int line, int column);
 
@@ -75,6 +80,8 @@ namespace eden_command {
 		
 		std::string _outputFilepath;
 		
+		int _currentScripts = 0;
+
 		int _debugLine = -1;
 		
 		int _debugColumn = -1;

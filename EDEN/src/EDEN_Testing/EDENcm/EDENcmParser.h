@@ -4,6 +4,10 @@
 #include "EDENcmToken.h"
 #include "EDENcmStatements.h"
 #include <vector>
+#include <exception>
+
+
+#define ErrorParsing() { _errorParsing = true; return nullptr; };
 
 namespace eden_command {
 	/// @brief Toma un vector de Tokens generado por el Lexer para poder hacer el arbol de llamadas de sentencias (statements).
@@ -13,10 +17,13 @@ namespace eden_command {
 
 		EDEN_API std::vector<EDENcm_Statement*> parse();
 
+		bool hadErrorParsing() const;
 	private:
 		std::vector<EDENcm_Token> _tokens;
 
 		size_t _pos = 0;
+
+		bool _errorParsing = false;
 
 		EDENcm_Statement* parseStatement();
 

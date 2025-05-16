@@ -27,9 +27,15 @@ bool eden_command::EDENcm_Parser::isAtEnd() const {
 	return peek().type == EDENcm_TokenType::EndOfFile;
 }
 
+bool eden_command::EDENcm_Parser::hadErrorParsing() const
+{
+	return _errorParsing;
+}
+
 std::vector<eden_command::EDENcm_Statement*> eden_command::EDENcm_Parser::parse() {
 	std::vector<EDENcm_Statement*> statements;
-	while (!isAtEnd()) {
+	_errorParsing = false;
+	while (!isAtEnd() && !_errorParsing) {
 		auto statement = parseStatement();
 		if (statement) statements.push_back(statement);
 	}
@@ -48,9 +54,18 @@ eden_command::EDENcm_Statement* eden_command::EDENcm_Parser::parseFunctionCall()
 	const EDENcm_Token& tk = advance();
 	std::string name = tk.text;
 	
-	match(EDENcm_TokenType::ParenOpen);
+	if (!match(EDENcm_TokenType::ParenOpen)) {
+		ErrorParsing();
+	}
+
 	std::vector<Argument> args;
-	while (!match(EDENcm_TokenType::ParenClose)) {
+	bool parenClose = false;
+	bool comma = true;
+	while (!(parenClose = match(EDENcm_TokenType::ParenClose)) && !isAtEnd()) {
+		if (!comma) {
+			ErrorParsing();
+		}
+		
 		const EDENcm_Token& t = peek();
 		
 		if (t.type == EDENcm_TokenType::Identifier && (t.text == "true" || t.text == "false")) {
@@ -59,13 +74,27 @@ eden_command::EDENcm_Statement* eden_command::EDENcm_Parser::parseFunctionCall()
 		}
 		else if (t.type == EDENcm_TokenType::Identifier && t.text == "vec3") {
 			advance();
-			match(EDENcm_TokenType::ParenOpen);
-			float x = std::stof(advance().text);
-			match(EDENcm_TokenType::Comma);
-			float y = std::stof(advance().text);
-			match(EDENcm_TokenType::Comma);
-			float z = std::stof(advance().text);
-			match(EDENcm_TokenType::ParenClose);
+			float x, y, z = 0;
+			try {
+				if (!match(EDENcm_TokenType::ParenOpen)) {
+					ErrorParsing();
+				}
+				x = std::stof(advance().text);
+				if (!match(EDENcm_TokenType::Comma)) {
+					ErrorParsing();
+				}
+				y = std::stof(advance().text);
+				if (!match(EDENcm_TokenType::Comma)) {
+					ErrorParsing();
+				}
+				z = std::stof(advance().text);
+				if (!match(EDENcm_TokenType::ParenClose)) {
+					ErrorParsing();
+				}
+			}
+			catch (std::exception e) {
+				ErrorParsing();
+			}
 			args.push_back(Argument(eden_utils::Vector3{x, y, z}));
 		}
 		else if (t.type == EDENcm_TokenType::String) {
@@ -74,21 +103,31 @@ eden_command::EDENcm_Statement* eden_command::EDENcm_Parser::parseFunctionCall()
 		}
 		else if (t.type == EDENcm_TokenType::Number) {
 			std::string numStr = t.text;
-			if (numStr.find('.') != std::string::npos) {
-				args.push_back(Argument(std::stof(numStr)));
+			try {
+				if (numStr.find('.') != std::string::npos) {
+					args.push_back(Argument(std::stof(numStr)));
+				}
+				else {
+					args.push_back(Argument(std::stoi(numStr)));
+				}
 			}
-			else {
-				args.push_back(Argument(std::stoi(numStr)));
+			catch (std::exception e) {
+				ErrorParsing();
 			}
 			advance();
 		}
 		else {
 			CommandManager::getInstance()->logDebugMessage("Unexpected token: " + t.text, true);
-			advance();
+			ErrorParsing();
 		}
 
-		match(EDENcm_TokenType::Comma);
+		comma = match(EDENcm_TokenType::Comma);
 	}
+
+	if (!parenClose) {
+		ErrorParsing();
+	}
+
 	match(EDENcm_TokenType::Semicolon);
 	auto fn = new EDENcm_FunctionCall();
 	fn->name = name;
@@ -99,13 +138,33 @@ eden_command::EDENcm_Statement* eden_command::EDENcm_Parser::parseFunctionCall()
 }
 
 eden_command::EDENcm_Statement* eden_command::EDENcm_Parser::parseLoop() {
-	int count = std::stoi(advance().text);
-	match(EDENcm_TokenType::BraceOpen);
+	int count = 0;
+	try {
+		count = std::stoi(advance().text);
+	}
+	catch (std::exception e) {
+		ErrorParsing();
+	}
+	
+	if (!match(EDENcm_TokenType::BraceOpen)) {
+		ErrorParsing();
+	}
+
+	bool braceClose = false;
 	std::vector<EDENcm_Statement*> body;
-	while (!match(EDENcm_TokenType::BraceClose) && !isAtEnd()) {
+	while (!(braceClose = match(EDENcm_TokenType::BraceClose)) && !isAtEnd()) {
 		body.push_back(parseStatement());
 	}
+
+	if (!braceClose) {
+		for (auto statement : body) {
+			delete statement;
+		}
+		ErrorParsing();
+	}
+
 	match(EDENcm_TokenType::Semicolon);
+
 	auto loop = new EDENcm_Loop();
 	loop->count = count;
 	loop->body = body;
@@ -113,7 +172,10 @@ eden_command::EDENcm_Statement* eden_command::EDENcm_Parser::parseLoop() {
 }
 
 eden_command::EDENcm_Statement* eden_command::EDENcm_Parser::parseDebug() {
-	match(EDENcm_TokenType::SymbolLeftShift);
+	if (!match(EDENcm_TokenType::SymbolLeftShift)) {
+		ErrorParsing();
+	}
+
 	auto dbg = new EDENcm_DebugOutput();
 	dbg->inner = parseStatement();
 	return dbg;
@@ -122,24 +184,48 @@ eden_command::EDENcm_Statement* eden_command::EDENcm_Parser::parseDebug() {
 eden_command::EDENcm_Statement* eden_command::EDENcm_Parser::parseDisable() {
 	auto dis = new EDENcm_DisableDebug();
 	if (match(EDENcm_TokenType::BracketOpen)) {
-		int from = std::stoi(advance().text);
-		match(EDENcm_TokenType::Colon);
-		int to = std::stoi(advance().text);
-		match(EDENcm_TokenType::BracketClose);
+		int from = 0;
+		int to = 0;
+		try {
+			from = std::stoi(advance().text);
+			if (!match(EDENcm_TokenType::Colon)) {
+				delete dis;
+				ErrorParsing();
+			}
+			to = std::stoi(advance().text);
+			if (!match(EDENcm_TokenType::BracketClose)) {
+				delete dis;
+				ErrorParsing();
+			}
+		}
+		catch (std::exception e) {
+			delete dis;
+			ErrorParsing();
+		}
+		
 		dis->range = std::make_pair(from, to);
 	}
-	match(EDENcm_TokenType::SymbolRightShift);
+	if (!match(EDENcm_TokenType::SymbolRightShift)) {
+		delete dis;
+		ErrorParsing();
+	}
 	dis->inner = parseStatement();
 	return dis;
 }
 
 eden_command::EDENcm_Statement* eden_command::EDENcm_Parser::parseWait() {
 	float seconds = 0.0f;
-	seconds = std::stof(advance().text);
+	try {
+		seconds = std::stof(advance().text);
+	}
+	catch (std::exception e) {
+		ErrorParsing();
+	}
 	std::string unit = advance().text;
 	if (unit == "s") seconds *= 1.0f;
 	else if (unit == "ms") seconds /= 1000.0f;
-	else seconds = 0.0f;
+	else ErrorParsing();
+
 	match(EDENcm_TokenType::Semicolon);
 
 	auto waitStmt = new EDENcm_Wait();

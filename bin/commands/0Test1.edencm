@@ -1,6 +1,6 @@
 wait 3.0 s;
 
-ChangeScene("DamnGame_level1")
+ChangeScene("DamnGame_level1");
 
 wait 0.5 s;
 

@@ -33,15 +33,31 @@ void eden_command::CommandManager::ExecuteScripts() {
 		EDENcm_Parser parser(lexer.tokenize());
 		auto statements = parser.parse();
 
-		_activeScripts.push_back(ScriptExecutionContext{ 
-			.statements = std::move(statements), 
-			.currentStatementIndex = 0, 
-			.debugName = fp.stem().string(), 
+		if (!parser.hadErrorParsing()) {
+			_activeScripts.push_back(ScriptExecutionContext{
+			.statements = std::move(statements),
+			.currentStatementIndex = 0,
+			.debugName = fp.stem().string(),
 			.finished = false }
 			);
+		}
+		else {
+			for (auto statement : statements) {
+				delete statement;
+			}
+		}
+
+		
 		
 		++ot;
 	}
+
+	_currentScripts = 0;
+}
+
+void eden_command::CommandManager::stopCurrentScript()
+{
+	_activeScripts[_currentScripts].currentStatementIndex = _activeScripts[_currentScripts].statements.size();
 }
 
 void eden_command::CommandManager::openDebugFile(const std::string& scriptFilename) {
@@ -110,6 +126,7 @@ void eden_command::CommandManager::Update(float dT) {
 		}
 		else {
 			ctx.finished = true;
+			_currentScripts++;
 			for (auto* stmt : ctx.statements) delete stmt;
 			ctx.statements.clear();
 			closeDebugFile();
