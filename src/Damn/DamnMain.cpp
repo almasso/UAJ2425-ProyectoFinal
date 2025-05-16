@@ -35,6 +35,7 @@
 #include "BotCollides.h"
 #include "BotCollision.h"
 #include "HeatMapDrawer.h"
+#include "DamnCommands.h"
 
 #include <chrono>      
 #include <string>   
@@ -80,10 +81,11 @@ void RegisterCommands() {
 	eden_command::CommandManager* instance = eden_command::CommandManager::getInstance();
 	//instance->RegisterFunction();
 	instance->RegisterFunction("juegoTest", funcionPrueba);
+	instance->RegisterFunction("TrackerStartScene", damn::DamnCommands::TrackerStartScene);
+	instance->RegisterFunction("TrackerEndScene", damn::DamnCommands::TrackerEndScene);
 }
 
 void LoadScene() {
-	eden_command::CommandManager::getInstance()->ExecuteScripts();
 	eden::SceneManager* scnManager = eden::SceneManager::getInstance();
 	// Desactiva los mensajes en consola al crear entidades 
 	scnManager->SetDebugLog(false);
@@ -120,6 +122,9 @@ void LoadScene() {
 			Tracker::End();
 		}
 	}
+
+
+	eden_command::CommandManager::getInstance()->ExecuteScripts();
 }
 
 void EndGame() {

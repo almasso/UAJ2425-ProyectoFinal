@@ -59,6 +59,7 @@
     <ClCompile Include="..\..\src\Damn\HeatMapDrawer.cpp">
       <Filter>ProyectoFinal</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Damn\DamnCommands.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Damn\CameraMovement.h" />
@@ -119,6 +120,7 @@
     <ClInclude Include="..\..\src\Damn\HeatMapDrawer.h">
       <Filter>ProyectoFinal</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Damn\DamnCommands.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Eventos">

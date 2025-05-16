@@ -106,6 +106,7 @@
     <ClInclude Include="..\..\src\Damn\BulletEnemyDamage.h" />
     <ClInclude Include="..\..\src\Damn\BulletPlayerDamage.h" />
     <ClInclude Include="..\..\src\Damn\ChangeCameraBackground.h" />
+    <ClInclude Include="..\..\src\Damn\DamnCommands.h" />
     <ClInclude Include="..\..\src\Damn\GameEventTracker.h" />
     <ClInclude Include="..\..\src\Damn\HeatMapDrawer.h" />
     <ClInclude Include="..\..\src\Damn\LevelEndEvent.h" />
@@ -146,6 +147,7 @@
     <ClCompile Include="..\..\src\Damn\BulletEnemyDamage.cpp" />
     <ClCompile Include="..\..\src\Damn\BulletPlayerDamage.cpp" />
     <ClCompile Include="..\..\src\Damn\ChangeCameraBackground.cpp" />
+    <ClCompile Include="..\..\src\Damn\DamnCommands.cpp" />
     <ClCompile Include="..\..\src\Damn\GameEventTracker.cpp" />
     <ClCompile Include="..\..\src\Damn\HeatMapDrawer.cpp" />
     <ClCompile Include="..\..\src\Damn\LevelEndEvent.cpp" />

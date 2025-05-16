@@ -1,5 +1,5 @@
 wait 3.0 s;
-
+TrackerStartScene(0);
 ChangeScene("DamnGame_level1");
 
 wait 0.5 s;
@@ -11,3 +11,5 @@ loop 20 {
 
 
 wait 3.0 s;
+ChangeScene("Menu");
+TrackerEndScene();
