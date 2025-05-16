@@ -3326,7 +3326,7 @@ CollisionLayers = {
 	Layers = {
 		DEFAULT = "",
 		FLOOR = "",
-		PLAYER = "BOT",
-		BOT = "BOT"
+		BOT = "BOT|PLAYER",
+		PLAYER = "BOT"
 	}
 }

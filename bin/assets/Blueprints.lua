@@ -150,7 +150,7 @@ EnemyBullet = {
 				Radius = "0.2",
 				Shape = "SPHERE",
 				CollisionFlag = "DINAMIC",
-				CollisionLayer = "PLAYER",
+				CollisionLayer = "DEFAULT",
 				Trigger = "true"
 			}
 		},
@@ -284,7 +284,7 @@ Player = {
 				Radius = "0.0",
 				Shape = "BOX",
 				CollisionFlag = "DYNAMIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "PLAYER",
 				Trigger = "false"
 			}
 		},
