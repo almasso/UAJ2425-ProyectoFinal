@@ -2575,6 +2575,9 @@ Entities = { Entity1, Entity2, Entity3, Entity4, Entity5, Entity6, Entity7, Enti
 
 CollisionLayers = {
 	Layers = {
-		DEFAULT = ""
+		DEFAULT = "",
+		FLOOR = "",
+		BOT = "BOT|PLAYER",
+		PLAYER = "BOT"
 	}
 }

@@ -3998,6 +3998,8 @@ Entity115, Entity116, Entity117, Entity118, Entity119, Entity120, Entity121, Ent
 CollisionLayers = {
 	Layers = {
 		DEFAULT = "",
-		FLOOR = ""
+		FLOOR = "",
+		BOT = "BOT|PLAYER",
+		PLAYER = "BOT"
 	}
 }

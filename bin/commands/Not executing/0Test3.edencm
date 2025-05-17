@@ -10,6 +10,6 @@ loop 20 {
 };
 
 
-wait 3.0 s;
+wait 300.0 s;
 ChangeScene("Menu");
 TrackerEndScene();

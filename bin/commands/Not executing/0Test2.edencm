@@ -1,0 +1,15 @@
+wait 3.0 s;
+TrackerStartScene(1);
+ChangeScene("DamnGame_level2");
+
+wait 0.5 s;
+
+loop 20 {
+	InstantiateBlueprint("MovementBot", vec3(0.813310980796814, 5.464509963989258, 5.160520076751709));
+	wait 0.1 s;
+};
+
+
+wait 300.0 s;
+ChangeScene("Menu");
+TrackerEndScene();

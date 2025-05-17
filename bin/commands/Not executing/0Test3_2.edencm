@@ -1,0 +1,15 @@
+wait 3.0 s;
+TrackerStartScene(2);
+ChangeScene("DamnGame_level3");
+
+wait 0.5 s;
+
+loop 20 {
+	InstantiateBlueprint("CollisionBot", vec3(-4.900733470916748, 5.348429203033447, 25.685970306396484));
+	wait 0.1 s;
+};
+
+
+wait 300.0 s;
+ChangeScene("Menu");
+TrackerEndScene();
