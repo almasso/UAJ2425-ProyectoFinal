@@ -35,13 +35,19 @@ namespace damn {
 
 		void Start() override;
 
-		void ParseReadData();
+		void DiscretizeReadData();
+
+		void ReadData();
+
+
 		eden_ec::Entity* InstanceHeatSphere(float scaleFactor, const eden_utils::Vector3& spawnPosition);
 
 		bool _alreadyShownPoints = false;
 		float _gridSize = 10.f;
+		std::string _readFileName = "";
 		float _maxGridValue = 1;
-		std::vector<eden_utils::Vector3> readPositions;
+		std::vector<eden_utils::Vector3> heatPositions;
+		std::vector<eden_utils::Vector3> stuckPositions;
 		std::unordered_map<eden_utils::Vector3, int> parsedGridPositions;
 	};
 }
