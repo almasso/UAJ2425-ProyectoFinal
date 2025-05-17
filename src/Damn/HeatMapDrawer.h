@@ -4,6 +4,7 @@
 #include <Vector3.h>
 #include <vector>
 #include <unordered_map>
+#include "EDENcm/EDENcmStatements.h"
 #include <Entity.h>
 #include <functional>
 
@@ -24,27 +25,26 @@ namespace damn {
 	{
 	public:
 		HeatMapDrawer();
-
-		void ShowHeatMapData();
-
+		
 		static std::string GetID() { return "HEAT_MAP_DRAWER"; }
+
+		void DiscretizeReadData(float gridSize);
+
+		void ReadData(std::string fileName);
+
+		void InstantiateHeatMapData();
 	protected:
-		void Init(eden_script::ComponentArguments* args) override;
+		void Init(eden_script::ComponentArguments* args) override {};
 
 		void Awake() override {};
 
-		void Start() override;
-
-		void DiscretizeReadData();
-
-		void ReadData();
+		void Start() override {};
 
 
 		eden_ec::Entity* InstanceHeatSphere(float scaleFactor, const eden_utils::Vector3& spawnPosition);
 
 		bool _alreadyShownPoints = false;
 		float _gridSize = 10.f;
-		std::string _readFileName = "";
 		float _maxGridValue = 1;
 		std::vector<eden_utils::Vector3> heatPositions;
 		std::vector<eden_utils::Vector3> stuckPositions;

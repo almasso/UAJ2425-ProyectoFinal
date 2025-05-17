@@ -11,7 +11,7 @@ damn::HeatMapDrawer::HeatMapDrawer()
 {
 }
 
-void damn::HeatMapDrawer::ShowHeatMapData()
+void damn::HeatMapDrawer::InstantiateHeatMapData()
 {
     //comprobación para que no se pueda volver a mostrar los puntos si ya se han mostrado
     if (_alreadyShownPoints) return;
@@ -31,9 +31,10 @@ void damn::HeatMapDrawer::ShowHeatMapData()
     }
 }
 
-void damn::HeatMapDrawer::DiscretizeReadData()
+void damn::HeatMapDrawer::DiscretizeReadData(float gridSize)
 {
     if (!heatPositions.empty()) {
+        _gridSize = gridSize;
         for (auto position : heatPositions) {
             eden_utils::Vector3 equivalentGrid = position / _gridSize;
             equivalentGrid = { floor(equivalentGrid.GetX()), floor(equivalentGrid.GetY()), floor(equivalentGrid.GetZ()) };
@@ -49,9 +50,9 @@ void damn::HeatMapDrawer::DiscretizeReadData()
     }
 }
 
-void damn::HeatMapDrawer::ReadData()
+void damn::HeatMapDrawer::ReadData(std::string fileName)
 {
-    std::ifstream f("C:/Users/Miguel/Desktop/UAJ2425-ProyectoFinal/bin/assets/testREAD.json");
+    std::ifstream f(fileName);
     nlohmann::json data = nlohmann::json::parse(f);
     eden_utils::Vector3 readPos;
     for (auto obj : data) {
@@ -86,18 +87,4 @@ eden_ec::Entity* damn::HeatMapDrawer::InstanceHeatSphere(float scaleFactor, cons
         spawnedEntity = eden::SceneManager::getInstance()->InstantiateBlueprint("RedSphere", spawnPosition);
     }
     return spawnedEntity;
-}
-
-
-void damn::HeatMapDrawer::Init(eden_script::ComponentArguments* args)
-{
-	_gridSize = args->GetValueToFloat("GridSize");
-    _readFileName = args->GetValueToString("File");
-}
-
-void damn::HeatMapDrawer::Start()
-{
-    ReadData();
-    DiscretizeReadData();
-    ShowHeatMapData();
 }
