@@ -13,7 +13,14 @@ void damn::Bot::Update(float deltaTime)
     timerEvent += deltaTime;
     if (timerEvent > timeToSendEvent) {
         timerEvent = 0;
+        isStuck = false;
+        lastPositions.push_back(_transform->GetPosition());
+        if (lastPositions.size() == numLastPositions) {
+            isStuck = IsStuck();
+            lastPositions.pop_front();
+        }
         SetPositionEvent();
+        if (isStuck) ResetBot();
     }
 
     BotMove();
@@ -80,20 +87,11 @@ bool damn::Bot::IsStuck()
 
 void damn::Bot::SetPositionEvent()
 {
-    isStuck = false;
-    lastPositions.push_back(_transform->GetPosition());
-    if (lastPositions.size() == numLastPositions) {
-        isStuck = IsStuck();
-        lastPositions.pop_front();
-    }
-
     PositionEvent* _pos = new PositionEvent(isStuck, _transform->GetPosition().GetX(), _transform->GetPosition().GetY(), _transform->GetPosition().GetZ());
     if (Tracker::Instance()) {
         Tracker::Instance()->TrackEvent(_pos);
     }
     else delete _pos;
-    
-    if (isStuck) ResetBot();
 }
 
 void damn::Bot::ResetBot()
