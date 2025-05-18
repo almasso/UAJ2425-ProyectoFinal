@@ -93,10 +93,13 @@ void damn::Bot::SetPositionEvent()
     }
     else delete _pos;
     
-    if (isStuck) {
-        _transform->SetPosition(_iniPos);
-        _transform->SetRotation(_iniRot);
-        lastPositions.clear();
-        _direction = eden_utils::Vector3(0, 0, 0);
-    }
+    if (isStuck) ResetBot();
+}
+
+void damn::Bot::ResetBot()
+{
+    _transform->SetPosition(_iniPos);
+    _transform->SetRotation(_iniRot);
+    lastPositions.clear();
+    _direction = eden_utils::Vector3(0, 0, 0);
 }

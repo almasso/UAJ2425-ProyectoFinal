@@ -68,6 +68,7 @@ namespace damn {
 		bool IsStuck();
 		virtual void BotMove() = 0;
 		void SetPositionEvent();
+		void ResetBot();
 	};
 }
 #endif

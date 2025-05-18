@@ -37,11 +37,7 @@ void damn::BotMovement::Update(float deltaTime)
 
 void damn::BotMovement::BotMove()
 {
-	if (isStuck) {
-		timerPos = 0;
-		isStuck = false;
-	}
-	else if (timerPos > timeToChange) {
+	if (timerPos > timeToChange) {
 		timerPos = 0;
 		_direction = eden_utils::Vector3(0, 0, 0);
 		int dir;
