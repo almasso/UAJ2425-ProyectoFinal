@@ -5,6 +5,7 @@
 #include <Transform.h>
 #include <nlohmann/json.hpp>
 #include <fstream>
+#include "CommandManager.h"
 #include <ComponentArguments.h>
 
 damn::HeatMapDrawer::HeatMapDrawer()
@@ -52,6 +53,7 @@ void damn::HeatMapDrawer::DiscretizeReadData(float gridSize)
 
 void damn::HeatMapDrawer::ReadData(std::string fileName)
 {
+    eden_command::CommandManager::getInstance()->logDebugMessage(fileName);
     std::ifstream f(fileName);
     nlohmann::json data = nlohmann::json::parse(f);
     eden_utils::Vector3 readPos;
