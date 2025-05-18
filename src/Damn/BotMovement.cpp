@@ -45,7 +45,7 @@ void damn::BotMovement::BotMove()
 		timerPos = 0;
 		_direction = eden_utils::Vector3(0, 0, 0);
 		int dir;
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 5; i++) {
 			dir = rand() % 4;
 			switch (dir)
 			{
