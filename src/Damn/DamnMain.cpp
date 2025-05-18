@@ -83,6 +83,8 @@ void RegisterCommands() {
 	instance->RegisterFunction("juegoTest", funcionPrueba);
 	instance->RegisterFunction("TrackerStartScene", damn::DamnCommands::TrackerStartScene);
 	instance->RegisterFunction("TrackerEndScene", damn::DamnCommands::TrackerEndScene);
+	instance->RegisterFunction("HeatMapShow", damn::DamnCommands::ShowHeatMap);
+	instance->RegisterFunction("EnableFlyMode", damn::DamnCommands::EnableFlyMode);
 }
 
 void LoadScene() {

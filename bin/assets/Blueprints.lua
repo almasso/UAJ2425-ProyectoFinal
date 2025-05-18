@@ -750,6 +750,24 @@ CollisionBot = {
     }
 }
 
+HeatMapDrawer = {
+    Name = "HeatMapDrawer",
+    Components = {
+        {
+            Name = "TRANSFORM",
+            Arguments = {
+                Position = "0|0|0",
+                Rotation = "false|1.0|0.0|0.0|0.0",
+                Scale = "1|1|1"
+            }
+        },
+		{
+            Name = "HEAT_MAP_DRAWER",
+            Arguments = {}
+        }
+    }
+}
+
 HeatMapPoint = {
     Name = "HeatMapPoint",
     Components = {
@@ -870,5 +888,26 @@ RedSphere = {
     }
 }
 
+Stuck = {
+    Name = "Stuck",
+    Components = {
+        {
+            Name = "TRANSFORM",
+            Arguments = {
+                Position = "0|0|0",
+                Rotation = "false|1.0|0.0|0.0|0.0",
+                Scale = "0.05|35|0.05"
+            }
+        },
+		{
+            Name = "MESH_RENDERER",
+            Arguments = {
+                Mesh = "Stuck"
+            }
+        }
+    }
+}
+
 Blueprints = { Cube, Bullet, ShotgunShell, EnemyBullet, Player, Wall, Floor, Enemy, EnemyHarder, Ammo, MenuBullet, 
-ScoreText, VignetteEffect, WinText, FinalScoreText, MainMenuButton, Cursor, healthEffect, LoseText,MovementBot, CollisionBot, YellowSphere, YellowMidSphere, OrangeSphere, OrangeMidSphere, RedSphere }
+ScoreText, VignetteEffect, WinText, FinalScoreText, MainMenuButton, Cursor, healthEffect, LoseText,MovementBot, 
+CollisionBot, YellowSphere, YellowMidSphere, OrangeSphere, OrangeMidSphere, RedSphere, Stuck, HeatMapDrawer }

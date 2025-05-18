@@ -12,6 +12,10 @@ namespace damn {
 		static void TrackerStartScene(std::vector<eden_command::Argument> args);
 
 		static void TrackerEndScene(std::vector<eden_command::Argument> args);
+
+		static void ShowHeatMap(std::vector<eden_command::Argument> args);
+
+		static void EnableFlyMode(std::vector<eden_command::Argument> args);
 	};
 }
 

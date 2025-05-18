@@ -1,4 +1,7 @@
 #include "DamnCommands.h"
+#include "SceneManager.h"
+#include "HeatMapDrawer.h"
+#include "MovementController.h"
 
 void damn::DamnCommands::TrackerStartScene(std::vector<eden_command::Argument> args)
 {
@@ -18,6 +21,38 @@ void damn::DamnCommands::TrackerEndScene(std::vector<eden_command::Argument> arg
 	if (Tracker::Instance()) {
 		LevelEndEvent* levelEnd = new LevelEndEvent();
 		Tracker::Instance()->TrackEvent(levelEnd);
+	}
+}
+
+void damn::DamnCommands::ShowHeatMap(std::vector<eden_command::Argument> args)
+{
+	auto entities = eden::SceneManager::getInstance()->GetEntitiesWithComponent(HeatMapDrawer::GetID());
+	if (entities.empty()) return;
+	eden_ec::Entity* heatMapDrawer = entities[0];
+	if (heatMapDrawer) {
+		damn::HeatMapDrawer* heatMapComp = heatMapDrawer->GetComponent<damn::HeatMapDrawer>();
+		if (heatMapComp) {
+			if (std::holds_alternative<std::string>(args[0]) && std::holds_alternative<float>(args[1])) {
+				heatMapComp->ReadData(std::get<std::string>(args[0]));
+				heatMapComp->DiscretizeReadData(std::get<float>(args[1]));
+				heatMapComp->InstantiateHeatMapData();
+			}
+		}
+	}
+}
+
+void damn::DamnCommands::EnableFlyMode(std::vector<eden_command::Argument> args)
+{
+	auto entities = eden::SceneManager::getInstance()->GetEntitiesWithComponent(MovementController::GetID());
+	if (entities.empty()) return;
+	eden_ec::Entity* controller = entities[0];
+	if (controller) {
+		damn::MovementController* movementController = controller->GetComponent<damn::MovementController>();
+		if (movementController) {
+			if (std::holds_alternative<bool>(args[0])) {
+				movementController->EnableFlyMode(std::get<bool>(args[0]));
+			}
+		}
 	}
 }
 

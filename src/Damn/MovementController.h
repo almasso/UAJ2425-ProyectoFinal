@@ -23,6 +23,10 @@ namespace damn {
 		/// @param newDir Nueva direccion de la entidad
 		void SetDirection(eden_utils::Vector3 newDir);
 
+
+		void EnableFlyMode(bool v);
+
+
 		/// @brief ID del componente
 		/// @return Devuelve el ID del componente
 		static std::string GetID() { return "MOVEMENT_CONTROLLER"; }
@@ -48,6 +52,8 @@ namespace damn {
 
 		/// @brief Referencia al RigidBody
 		eden_ec::CRigidBody* _rigidBody = nullptr;
+
+		bool _flyModeEnabled = false;
 	};
 }
 
