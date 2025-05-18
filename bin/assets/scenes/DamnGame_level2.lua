@@ -40,7 +40,7 @@ Entity2 = {
 				Radius = "37.5893440246582",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -216,7 +216,7 @@ Entity11 = {
 				Radius = "37.5893440246582",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -251,7 +251,7 @@ Entity12 = {
 				Radius = "37.5893440246582",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -831,7 +831,7 @@ Entity29 = {
 				Radius = "37.5893440246582",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -936,7 +936,7 @@ Entity32 = {
 				Radius = "37.5893440246582",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}
@@ -1146,7 +1146,7 @@ Entity38 = {
 				Radius = "37.5893440246582",
 				Shape = "BOX",
 				CollisionFlag = "STATIC",
-				CollisionLayer = "DEFAULT",
+				CollisionLayer = "FLOOR",
 				Trigger = "false"
 			}
 		}

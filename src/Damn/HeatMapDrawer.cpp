@@ -12,7 +12,7 @@ damn::HeatMapDrawer::HeatMapDrawer()
 {
 }
 
-void damn::HeatMapDrawer::InstantiateHeatMapData()
+void damn::HeatMapDrawer::InstantiateHeatMapData(bool showStuck, float minSphereSize)
 {
     //comprobación para que no se pueda volver a mostrar los puntos si ya se han mostrado
     if (_alreadyShownPoints) return;
@@ -24,16 +24,20 @@ void damn::HeatMapDrawer::InstantiateHeatMapData()
         spawnPosition = { spawnPosition.GetX(), spawnPosition.GetY() + 1 , spawnPosition.GetZ()};
         float scaleFactor = cell.second / _maxGridValue;
         eden_ec::Entity* e = InstanceHeatSphere(scaleFactor, spawnPosition);
+        scaleFactor = std::max(scaleFactor, minSphereSize);
         eden_utils::Vector3 scale(scaleFactor, scaleFactor, scaleFactor);
         e->GetComponent<eden_ec::CTransform>()->SetScale(scale);
     }
-    for (auto pos : stuckPositions) {
-        eden::SceneManager::getInstance()->InstantiateBlueprint("Stuck", pos);
+    if (showStuck) {
+        for (auto pos : stuckPositions) {
+            eden::SceneManager::getInstance()->InstantiateBlueprint("Stuck", pos);
+        }
     }
 }
 
 void damn::HeatMapDrawer::DiscretizeReadData(float gridSize)
 {
+    if (_alreadyShownPoints) return;
     if (!heatPositions.empty()) {
         _gridSize = gridSize;
         for (auto position : heatPositions) {
@@ -53,6 +57,7 @@ void damn::HeatMapDrawer::DiscretizeReadData(float gridSize)
 
 void damn::HeatMapDrawer::ReadData(std::string fileName)
 {
+    if (_alreadyShownPoints) return;
     eden_command::CommandManager::getInstance()->logDebugMessage(fileName);
     std::ifstream f(fileName);
     nlohmann::json data = nlohmann::json::parse(f);
