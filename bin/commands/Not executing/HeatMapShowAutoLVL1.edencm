@@ -1,0 +1,11 @@
+wait 1.5 s;
+ChangeScene("DamnGame_level1");
+
+wait 1.0 s;
+
+InstantiateBlueprint("HeatMapDrawer");
+EnableFlyMode(true);
+
+wait 1.5 s;
+
+HeatMapShow("REPLACE", 1.5, true, 0.1);
